@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4acb8961-ce72-4f21-99cb-be834c32cfd8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/application/controllers/Tests/Show.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/www/application/controllers/Tests/ShowTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/application/views/TestDocuments/code-coverage/BlueTape.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/application/views/TestDocuments/code-coverage/BlueTape.php.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/application/views/TestDocuments/code-coverage/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/application/views/TestDocuments/code-coverage/dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/application/views/TestDocuments/code-coverage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/application/views/TestDocuments/code-coverage/index.html" afterDir="false" />
     </list>
@@ -57,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="43" />
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -87,6 +90,7 @@
         <option value="$PROJECT_DIR$/www/application/controllers/Tests/ShowTest.php" />
         <option value="$PROJECT_DIR$/www/application/controllers/Tests/TestLibrary.php" />
         <option value="$PROJECT_DIR$/www/application/controllers/Tests/Show.php" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -195,7 +199,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5862000" />
+    <option name="totallyTimeSpent" value="6308000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -266,7 +270,7 @@
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="43" />
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
