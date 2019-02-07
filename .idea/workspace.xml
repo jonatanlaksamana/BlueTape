@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4acb8961-ce72-4f21-99cb-be834c32cfd8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codecov.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/codecov.yml" beforeDir="false" afterPath="$PROJECT_DIR$/codecov.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/application/controllers/Tests/TestLibrary.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/application/controllers/Tests/TestLibrary.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/application/views/TestDocuments/code-coverage/BlueTape.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/application/views/TestDocuments/code-coverage/BlueTape.php.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/application/views/TestDocuments/code-coverage/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/application/views/TestDocuments/code-coverage/dashboard.html" afterDir="false" />
@@ -22,19 +24,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/application/controllers/Tests/TestLibrary.php">
+        <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="69" column="10" selection-start-line="69" selection-start-column="10" selection-end-line="69" selection-end-column="10" />
+            <state relative-caret-position="102">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.travis.yml">
+        <entry file="file://$PROJECT_DIR$/codecov.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="17">
+              <caret line="1" column="45" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -101,6 +103,7 @@
         <option value="$PROJECT_DIR$/www/application/controllers/Auth-dev.php" />
         <option value="$PROJECT_DIR$/www/application/controllers/Tests/TestLibrary.php" />
         <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/codecov.yml" />
       </list>
     </option>
   </component>
@@ -119,7 +122,7 @@
       <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="10" />
     <option name="y" value="30" />
     <option name="width" value="1750" />
@@ -207,12 +210,12 @@
       <workItem from="1549520800568" duration="683000" />
       <workItem from="1549529638775" duration="1065000" />
       <workItem from="1549533973942" duration="2480000" />
-      <workItem from="1549543053352" duration="2277000" />
+      <workItem from="1549543053352" duration="2504000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16817000" />
+    <option name="totallyTimeSpent" value="17044000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -330,6 +333,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codecov.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="45" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
         </state>
       </provider>
     </entry>
