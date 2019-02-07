@@ -1,8 +1,17 @@
 language: php
 php:
   - '7.2'
+
+services:
+  - mysql
+before_install:
+  - mysql -u root --password="" < tests/bluetape.sql
+
+
 before_script:
-  cp www/application/config/auth-dev.php www/application/config/auth.php
+  cp www/application/config/auth-dev.php www/application/config/auth.
+
+
 script: php www/index.php tests TestLibrary
 
 
