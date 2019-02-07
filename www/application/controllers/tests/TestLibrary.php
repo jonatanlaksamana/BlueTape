@@ -66,7 +66,11 @@ class TestLibrary extends CI_Controller {
         $this->testGetSemester();
         $this->testGetSemesterSimple();
         $this->testSmesterCodeToString();
+
 //        $this->testGetName();
+
+        $this->testGetEmail();
+
         $this->report();
     }
 
@@ -121,7 +125,12 @@ class TestLibrary extends CI_Controller {
         );
     }
 
-
+    function  testGetEmail(){
+        $this->unit->run(
+            $this->bluetape->getEmail("2016730025"),"7316025@student.unpar.ac.id",__FUNCTION__ , "mendapatkan email dari npm"
+        );
+    }
+    
 
 
 
