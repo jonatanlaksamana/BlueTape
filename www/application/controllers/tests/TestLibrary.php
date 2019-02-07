@@ -66,7 +66,11 @@ class TestLibrary extends CI_Controller {
         $this->testGetSemester();
         $this->testGetSemesterSimple();
         $this->testSmesterCodeToString();
+
+//        $this->testGetName();
+
         $this->testGetEmail();
+
         $this->report();
     }
 
@@ -104,7 +108,7 @@ class TestLibrary extends CI_Controller {
 
     function testGetName(){
         $this->unit->run(
-            $this->bluetape->getName("7316084@student.unpar.ac.id"),"DINI PUSPITA SUKMA ARIYANTI", __FUNCTION__ , "Untuk mendapatkan nama mahasiswa dari email"
+            $this->bluetape->getName("7316081@student.unpar.ac.id"),"JONATHAN LAKSAMANA PURNOMO", __FUNCTION__ , "Untuk mendapatkan nama mahasiswa dari email"
 
         );
     }

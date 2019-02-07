@@ -92,7 +92,11 @@
 <table style="width:100%; font-size:small; margin:10px 0; border-collapse:collapse; border:1px solid #CCC;">
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Test Name</th>
+<<<<<<< HEAD
+		<td style="border-bottom:1px solid #CCC;">testGetName</td>
+=======
 		<td style="border-bottom:1px solid #CCC;">testGetEmail</td>
+>>>>>>> c346603970a0989cc549a8da2f0d7af3863ba7b7
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Test Datatype</th>

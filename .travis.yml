@@ -3,8 +3,8 @@ php:
   - '7.2'
 before_script:
   cp www/application/config/auth-dev.php www/application/config/auth.php
+
+
 script: php www/index.php tests TestLibrary
-
-
 after_success:
   - bash <(curl -s https://codecov.io/bash)
