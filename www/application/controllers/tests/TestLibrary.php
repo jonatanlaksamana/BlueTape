@@ -63,9 +63,9 @@ class TestLibrary extends CI_Controller {
         $this->unit->set_test_items(array('test_name', 'test_datatype' , 'res_datatype' , 'result'));
         $this->testBlueTapeLibraryGetNPM();
         $this->testBlueTapeLibraryGetNPM_2017();
-//        $this->testGetSemester();
-//        $this->testGetSemesterSimple();
-//        $this->testSmesterCodeToString();
+        $this->testGetSemester();
+        $this->testGetSemesterSimple();
+        $this->testSmesterCodeToString();
         $this->report();
     }
 
