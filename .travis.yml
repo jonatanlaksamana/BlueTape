@@ -2,32 +2,16 @@ language: php
 php:
   - '7.2'
 
-services:
-  - mysql
 
-
-addons:
-  apt:
-    sources:
-      - mysql-5.7-trusty
-    packages:
-  - mysql-server
-
-
-
-sudo: required
-
-#before_install:
-#  - mysql -u root --password="" < tests/bluetape.sql
 
 
 before_script:
-  - mysql -e 'create database antvel;'
+
   cp www/application/config/auth-dev.php www/application/config/auth.
 
 
 script: php www/index.php tests TestLibrary
 
-
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+#
+#after_success:
+#  - bash <(curl -s https://codecov.io/bash)
