@@ -4,11 +4,25 @@ php:
 
 services:
   - mysql
-before_install:
-  - mysql -u root --password="" < tests/bluetape.sql
+
+
+addons:
+  apt:
+    sources:
+      - mysql-5.7-trusty
+    packages:
+  - mysql-server
+
+
+
+sudo: required
+
+#before_install:
+#  - mysql -u root --password="" < tests/bluetape.sql
 
 
 before_script:
+  - mysql -e 'create database antvel;'
   cp www/application/config/auth-dev.php www/application/config/auth.
 
 
