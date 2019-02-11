@@ -66,6 +66,7 @@ class TestLibrary extends CI_Controller {
         $this->testGetSemester();
         $this->testGetSemesterSimple();
         $this->testSmesterCodeToString();
+        $this->testGetSemester_ganjil();
 
 //        $this->testGetName();
 
@@ -95,6 +96,13 @@ class TestLibrary extends CI_Controller {
     function testGetSemester(){
         $this->unit->run(
             $this->bluetape->yearMonthToSemesterCode("2016",1),"162", __FUNCTION__ , "Untuk mengecek semester"
+
+        );
+    }
+
+    function testGetSemester_ganjil(){
+        $this->unit->run(
+            $this->bluetape->yearMonthToSemesterCode("2016",9),"161", __FUNCTION__ , "Untuk mengecek semester"
 
         );
     }

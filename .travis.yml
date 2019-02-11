@@ -6,5 +6,4 @@ before_script:
 
 
 script: php www/index.php tests TestLibrary
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+after_success: coveralls
