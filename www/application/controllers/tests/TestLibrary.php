@@ -2,8 +2,8 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class TestLibrary extends CI_Controller {
 
+class TestLibrary extends CI_Controller {
 
 
     public $coverage;
