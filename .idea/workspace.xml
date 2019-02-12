@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4acb8961-ce72-4f21-99cb-be834c32cfd8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codecov.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/www/application/controllers/Tests/TestLibrary.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/application/controllers/Tests/TestLibrary.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/application/views/EntriJadwalDosen/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/application/views/EntriJadwalDosen/main.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/application/views/TestDocuments/code-coverage/BlueTape.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/application/views/TestDocuments/code-coverage/BlueTape.php.html" afterDir="false" />
@@ -28,9 +25,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/application/controllers/Tests/TestLibrary.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="26" column="108" lean-forward="true" selection-start-line="26" selection-start-column="108" selection-end-line="26" selection-end-column="108" />
+            <state relative-caret-position="1324">
+              <caret line="106" column="25" lean-forward="true" selection-start-line="106" selection-start-column="25" selection-end-line="106" selection-end-column="25" />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/application/config/database.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1059" />
           </provider>
         </entry>
       </file>
@@ -48,16 +52,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+            <state relative-caret-position="85">
+              <caret line="5" column="79" selection-start-line="5" selection-start-column="79" selection-end-line="5" selection-end-column="79" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
@@ -71,15 +75,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
               <caret line="47" column="43" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/application/controllers/Migrate.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
             </state>
           </provider>
         </entry>
@@ -114,8 +109,8 @@
         <option value="$PROJECT_DIR$/codecov.yml" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/www/application/controllers/Tests/TestLibrary.php" />
-        <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/database.yml" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -153,6 +148,24 @@
             <path>
               <item name="BlueTape" type="b2602c69:ProjectViewProjectNode" />
               <item name="BlueTape" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BlueTape" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BlueTape" type="462c0819:PsiDirectoryNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BlueTape" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BlueTape" type="462c0819:PsiDirectoryNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BlueTape" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BlueTape" type="462c0819:PsiDirectoryNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -206,12 +219,12 @@
       <workItem from="1549533973942" duration="2480000" />
       <workItem from="1549543053352" duration="3287000" />
       <workItem from="1549877723100" duration="2590000" />
-      <workItem from="1549938303167" duration="1827000" />
+      <workItem from="1549938303167" duration="2112000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22244000" />
+    <option name="totallyTimeSpent" value="22529000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -332,13 +345,6 @@
     <entry file="file://$PROJECT_DIR$/www/application/views/TestDocuments/code-coverage/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/application/controllers/Tests/TestLibrary.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="26" column="108" lean-forward="true" selection-start-line="26" selection-start-column="108" selection-end-line="26" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/codecov.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -346,17 +352,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/application/controllers/Tests/TestLibrary.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1324">
+          <caret line="106" column="25" lean-forward="true" selection-start-line="106" selection-start-column="25" selection-end-line="106" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/application/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1059" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="79" selection-start-line="5" selection-start-column="79" selection-end-line="5" selection-end-column="79" />
         </state>
       </provider>
     </entry>
