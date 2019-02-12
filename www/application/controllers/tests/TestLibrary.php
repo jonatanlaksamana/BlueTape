@@ -67,11 +67,8 @@ class TestLibrary extends CI_Controller {
         $this->testGetSemesterSimple();
         $this->testSmesterCodeToString();
         $this->testGetSemester_ganjil();
-
-//        $this->testGetName();
-
+        $this->testGetName();
         $this->testGetEmail();
-
         $this->report();
     }
 

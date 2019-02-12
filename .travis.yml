@@ -5,5 +5,11 @@ before_script:
   cp www/application/config/auth-dev.php www/application/config/auth.php
 
 
+services: mysql
+
+before_install:
+  - mysql -e 'CREATE DATABASE bluetape;'
+
+
 script: php www/index.php tests TestLibrary
 after_success: coveralls
