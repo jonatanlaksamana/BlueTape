@@ -70,7 +70,8 @@ class TestLibrary extends CI_Controller {
 
 //        $this->testGetName();
 
-        $this->testGetEmail();
+        $this->testGetEmailBawah();
+        $this->testGetEmailAtas();
 
         $this->report();
     }
@@ -133,9 +134,17 @@ class TestLibrary extends CI_Controller {
         );
     }
 
-    function  testGetEmail(){
+    //EMAIL MHS SEBELUM 2017
+    function  testGetEmailBawah(){
         $this->unit->run(
-            $this->bluetape->getEmail("2016730025"),"7316025@student.unpar.ac.id",__FUNCTION__ , "mendapatkan email dari npm"
+            $this->bluetape->getEmail("2016730025"),"7316025@student.unpar.ac.id",__FUNCTION__ , "mendapatkan email dari npm mhs angkatan sebelum 2017"
+        );
+    }
+
+    //EMAIL MHS 2017 KEATAS
+    function  testGetEmailAtas(){
+        $this->unit->run(
+            $this->bluetape->getEmail("2017730048"),"7317048@student.unpar.ac.id",__FUNCTION__ , "mendapatkan email dari npm mhs angkatan 2017 keatas"
         );
     }
     
