@@ -63,6 +63,7 @@ class TestLibrary extends CI_Controller {
         $this->unit->set_test_items(array('test_name', 'test_datatype' , 'res_datatype' , 'result'));
         $this->testBlueTapeLibraryGetNPM();
         $this->testBlueTapeLibraryGetNPM_2017();
+        $this->testBlueTapeLibraryGetNPM_Null();
         $this->testGetSemester_genap();
         $this->testGetSemesterSimple_genap();
         $this->testGetSemesterSimple_ganjil();
@@ -94,6 +95,16 @@ class TestLibrary extends CI_Controller {
             'Ensure e-mail to NPM conversion works, for angkatan >= 2017'
         );
     }
+
+    public function testBlueTapeLibraryGetNPM_Null() {
+        $this->unit->run(
+            $this->bluetape->getNPM('fikrizzaki@gmail.com'),
+            NULL,
+            __FUNCTION__,
+            'Ensure e-mail to NPM conversion works, for angkatan >= 2017'
+        );
+    }
+
 
     function testGetSemester_genap(){
         $this->unit->run(
