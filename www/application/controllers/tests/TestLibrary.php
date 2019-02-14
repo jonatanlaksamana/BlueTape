@@ -74,7 +74,7 @@ class TestLibrary extends CI_Controller {
 
         $this->testGetEmailBawah();
         $this->testGetEmailAtas();
-
+        $this->testSmesterCodeToStringFalse();
         $this->report();
     }
 
@@ -143,6 +143,12 @@ class TestLibrary extends CI_Controller {
         );
 
     }
+    function  testSmesterCodeToStringFalse(){
+        $this->unit->run(
+            $this->bluetape->semesterCodeToString("169"),FALSE, __FUNCTION__ , "mengubah smester Padat code menjadi string"
+        );
+
+    }
     function  testDateTimeToHumanFormat(){
         $this->unit->run(
             $this->bluetape->dbDateTimeToReadableDate("2008-11-11 13:23:44"),"Selasa, 11 November 2008 ",__FUNCTION__,"mengubah format datetime pada database menjadi sesuatu yang bisa di baca manusia"
@@ -159,9 +165,11 @@ class TestLibrary extends CI_Controller {
     //EMAIL MHS 2017 KEATAS
     function  testGetEmailAtas(){
         $this->unit->run(
-            $this->bluetape->getEmail("2017730048"),"7317048@student.unpar.ac.id",__FUNCTION__ , "mendapatkan email dari npm mhs angkatan 2017 keatas"
+            $this->bluetape->getEmail("2018730048"),"2018730048@student.unpar.ac.id",__FUNCTION__ , "mendapatkan email dari npm mhs angkatan 2017 keatas"
         );
     }
+
+    
     
 
 
