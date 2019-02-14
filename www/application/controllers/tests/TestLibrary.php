@@ -65,7 +65,9 @@ class TestLibrary extends CI_Controller {
         $this->testBlueTapeLibraryGetNPM_2017();
         $this->testGetSemester();
         $this->testGetSemesterSimple();
-        $this->testSmesterCodeToString();
+        $this->testSmesterCodeToStringGanjil();
+        $this->testSmesterCodeToStringGenap();
+        $this->testSmesterCodeToStringPadat();
         $this->testGetSemester_ganjil();
 
 //        $this->testGetName();
@@ -122,9 +124,22 @@ class TestLibrary extends CI_Controller {
         );
     }
 
-    function  testSmesterCodeToString(){
+    function  testSmesterCodeToStringGanjil(){
         $this->unit->run(
-            $this->bluetape->semesterCodeToString("141"),"Ganjil 2014/2015" , __FUNCTION__ , "mengubah smester code menjadi string"
+            $this->bluetape->semesterCodeToString("141"),"Ganjil 2014/2015" , __FUNCTION__ , "mengubah smester Ganjil code menjadi string"
+        );
+
+    }
+    function  testSmesterCodeToStringGenap(){
+        $this->unit->run(
+            $this->bluetape->semesterCodeToString("152"),"Genap 2014/2015" , __FUNCTION__ , "mengubah smester Genap code menjadi string"
+        );
+
+    }
+
+    function  testSmesterCodeToStringPadat(){
+        $this->unit->run(
+            $this->bluetape->semesterCodeToString("164"),"Padat 2015/2016" , __FUNCTION__ , "mengubah smester Padat code menjadi string"
         );
 
     }
