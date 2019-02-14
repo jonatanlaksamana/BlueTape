@@ -63,10 +63,12 @@ class TestLibrary extends CI_Controller {
         $this->unit->set_test_items(array('test_name', 'test_datatype' , 'res_datatype' , 'result'));
         $this->testBlueTapeLibraryGetNPM();
         $this->testBlueTapeLibraryGetNPM_2017();
-        $this->testGetSemester();
-        $this->testGetSemesterSimple();
+        $this->testGetSemester_genap();
+        $this->testGetSemesterSimple_genap();
+        $this->testGetSemesterSimple_ganjil();
         $this->testSmesterCodeToString();
         $this->testGetSemester_ganjil();
+        $this->testGetSemester_pendek();
 
 //        $this->testGetName();
 
@@ -93,22 +95,38 @@ class TestLibrary extends CI_Controller {
         );
     }
 
-    function testGetSemester(){
+    function testGetSemester_genap(){
         $this->unit->run(
-            $this->bluetape->yearMonthToSemesterCode("2016",1),"162", __FUNCTION__ , "Untuk mengecek semester"
+            $this->bluetape->yearMonthToSemesterCode("2016",1),"162", __FUNCTION__ , "Untuk mengecek semester genap"
 
         );
     }
 
     function testGetSemester_ganjil(){
         $this->unit->run(
-            $this->bluetape->yearMonthToSemesterCode("2016",9),"161", __FUNCTION__ , "Untuk mengecek semester"
+            $this->bluetape->yearMonthToSemesterCode("2016",9),"161", __FUNCTION__ , "Untuk mengecek semester ganjil"
 
         );
     }
-    function testGetSemesterSimple(){
+
+    function testGetSemester_pendek(){
         $this->unit->run(
-            $this->bluetape->yearMonthToSemesterCodeSimplified("2016",1),"162", __FUNCTION__ , "Untuk mengkonversi tahun dan bulan sekarang menjadi code smester sederhana"
+            $this->bluetape->yearMonthToSemesterCode("2016",6),"164", __FUNCTION__ , "Untuk mengecek semester pendek"
+
+        );
+    }
+
+
+    function testGetSemesterSimple_genap(){
+        $this->unit->run(
+            $this->bluetape->yearMonthToSemesterCodeSimplified("2016",1),"162", __FUNCTION__ , "Untuk mengkonversi tahun dan bulan sekarang menjadi code smester sederhana (genap)"
+
+        );
+    }
+
+    function testGetSemesterSimple_ganjil(){
+        $this->unit->run(
+            $this->bluetape->yearMonthToSemesterCodeSimplified("2016",8),"161", __FUNCTION__ , "Untuk mengkonversi tahun dan bulan sekarang menjadi code smester sederhana (ganjil)"
 
         );
     }
