@@ -101,7 +101,7 @@ class TestLibrary extends CI_Controller {
             $this->bluetape->getNPM('fikrizzaki@gmail.com'),
             NULL,
             __FUNCTION__,
-            'Ensure e-mail to NPM conversion works, for angkatan >= 2017'
+            'Ensure e-mail to NPM conversion works, for dosen, etc'
         );
     }
 
