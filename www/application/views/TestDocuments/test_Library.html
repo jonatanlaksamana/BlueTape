@@ -1,5 +1,6 @@
 
-<table style="width:100%; font-size:small; margin:10px 0; border-collapse:collapse; border:1px solid #CCC;">
+<table border="0" style="color: blue" cellpadding="4" cellspacing="1">
+
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Test Name</th>
 		<td style="border-bottom:1px solid #CCC;">testBlueTapeLibraryGetNPM</td>
@@ -16,8 +17,14 @@
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Result</th>
 		<td style="border-bottom:1px solid #CCC;"><span style="color: #0C0;">Passed</span></td>
 	</tr>
+        <tr>
+                <td>{item}</td>
+                <td>{result}</td>
+        </tr>
+{/rows}
 </table>
-<table style="width:100%; font-size:small; margin:10px 0; border-collapse:collapse; border:1px solid #CCC;">
+<table border="0" style="color: blue" cellpadding="4" cellspacing="1">
+
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Test Name</th>
 		<td style="border-bottom:1px solid #CCC;">testBlueTapeLibraryGetNPM_2017</td>
@@ -34,8 +41,14 @@
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Result</th>
 		<td style="border-bottom:1px solid #CCC;"><span style="color: #0C0;">Passed</span></td>
 	</tr>
+        <tr>
+                <td>{item}</td>
+                <td>{result}</td>
+        </tr>
+{/rows}
 </table>
-<table style="width:100%; font-size:small; margin:10px 0; border-collapse:collapse; border:1px solid #CCC;">
+<table border="0" style="color: blue" cellpadding="4" cellspacing="1">
+
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Test Name</th>
 		<td style="border-bottom:1px solid #CCC;">testBlueTapeLibraryGetNPM_Null</td>
@@ -52,8 +65,14 @@
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Result</th>
 		<td style="border-bottom:1px solid #CCC;"><span style="color: #0C0;">Passed</span></td>
 	</tr>
+        <tr>
+                <td>{item}</td>
+                <td>{result}</td>
+        </tr>
+{/rows}
 </table>
-<table style="width:100%; font-size:small; margin:10px 0; border-collapse:collapse; border:1px solid #CCC;">
+<table border="0" style="color: blue" cellpadding="4" cellspacing="1">
+
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Test Name</th>
 		<td style="border-bottom:1px solid #CCC;">testGetSemester_genap</td>
@@ -70,8 +89,14 @@
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Result</th>
 		<td style="border-bottom:1px solid #CCC;"><span style="color: #0C0;">Passed</span></td>
 	</tr>
+        <tr>
+                <td>{item}</td>
+                <td>{result}</td>
+        </tr>
+{/rows}
 </table>
-<table style="width:100%; font-size:small; margin:10px 0; border-collapse:collapse; border:1px solid #CCC;">
+<table border="0" style="color: blue" cellpadding="4" cellspacing="1">
+
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Test Name</th>
 		<td style="border-bottom:1px solid #CCC;">testGetSemesterSimple_genap</td>
@@ -88,8 +113,14 @@
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Result</th>
 		<td style="border-bottom:1px solid #CCC;"><span style="color: #0C0;">Passed</span></td>
 	</tr>
+        <tr>
+                <td>{item}</td>
+                <td>{result}</td>
+        </tr>
+{/rows}
 </table>
-<table style="width:100%; font-size:small; margin:10px 0; border-collapse:collapse; border:1px solid #CCC;">
+<table border="0" style="color: blue" cellpadding="4" cellspacing="1">
+
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Test Name</th>
 		<td style="border-bottom:1px solid #CCC;">testGetSemesterSimple_ganjil</td>
@@ -106,8 +137,14 @@
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Result</th>
 		<td style="border-bottom:1px solid #CCC;"><span style="color: #0C0;">Passed</span></td>
 	</tr>
+        <tr>
+                <td>{item}</td>
+                <td>{result}</td>
+        </tr>
+{/rows}
 </table>
-<table style="width:100%; font-size:small; margin:10px 0; border-collapse:collapse; border:1px solid #CCC;">
+<table border="0" style="color: blue" cellpadding="4" cellspacing="1">
+
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Test Name</th>
 		<td style="border-bottom:1px solid #CCC;">testSmesterCodeToStringGanjil</td>
@@ -124,8 +161,14 @@
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Result</th>
 		<td style="border-bottom:1px solid #CCC;"><span style="color: #0C0;">Passed</span></td>
 	</tr>
+        <tr>
+                <td>{item}</td>
+                <td>{result}</td>
+        </tr>
+{/rows}
 </table>
-<table style="width:100%; font-size:small; margin:10px 0; border-collapse:collapse; border:1px solid #CCC;">
+<table border="0" style="color: blue" cellpadding="4" cellspacing="1">
+
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Test Name</th>
 		<td style="border-bottom:1px solid #CCC;">testSmesterCodeToStringGenap</td>
@@ -142,8 +185,14 @@
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Result</th>
 		<td style="border-bottom:1px solid #CCC;"><span style="color: #0C0;">Passed</span></td>
 	</tr>
+        <tr>
+                <td>{item}</td>
+                <td>{result}</td>
+        </tr>
+{/rows}
 </table>
-<table style="width:100%; font-size:small; margin:10px 0; border-collapse:collapse; border:1px solid #CCC;">
+<table border="0" style="color: blue" cellpadding="4" cellspacing="1">
+
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Test Name</th>
 		<td style="border-bottom:1px solid #CCC;">testSmesterCodeToStringPadat</td>
@@ -160,8 +209,14 @@
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Result</th>
 		<td style="border-bottom:1px solid #CCC;"><span style="color: #0C0;">Passed</span></td>
 	</tr>
+        <tr>
+                <td>{item}</td>
+                <td>{result}</td>
+        </tr>
+{/rows}
 </table>
-<table style="width:100%; font-size:small; margin:10px 0; border-collapse:collapse; border:1px solid #CCC;">
+<table border="0" style="color: blue" cellpadding="4" cellspacing="1">
+
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Test Name</th>
 		<td style="border-bottom:1px solid #CCC;">testGetSemester_ganjil</td>
@@ -178,16 +233,17 @@
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Result</th>
 		<td style="border-bottom:1px solid #CCC;"><span style="color: #0C0;">Passed</span></td>
 	</tr>
+        <tr>
+                <td>{item}</td>
+                <td>{result}</td>
+        </tr>
+{/rows}
 </table>
-<table style="width:100%; font-size:small; margin:10px 0; border-collapse:collapse; border:1px solid #CCC;">
+<table border="0" style="color: blue" cellpadding="4" cellspacing="1">
+
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Test Name</th>
-<<<<<<< HEAD
 		<td style="border-bottom:1px solid #CCC;">testGetName</td>
-=======
-<<<<<<< HEAD
-		<td style="border-bottom:1px solid #CCC;">testGetSemester_pendek</td>
->>>>>>> 06fad15740733e3435a72179f89789956a8c8956
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Test Datatype</th>
@@ -201,14 +257,17 @@
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Result</th>
 		<td style="border-bottom:1px solid #CCC;"><span style="color: #0C0;">Passed</span></td>
 	</tr>
+        <tr>
+                <td>{item}</td>
+                <td>{result}</td>
+        </tr>
+{/rows}
 </table>
-<table style="width:100%; font-size:small; margin:10px 0; border-collapse:collapse; border:1px solid #CCC;">
+<table border="0" style="color: blue" cellpadding="4" cellspacing="1">
+
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Test Name</th>
-		<td style="border-bottom:1px solid #CCC;">testGetEmail</td>
-=======
-		<td style="border-bottom:1px solid #CCC;">testGetEmailBawah</td>
->>>>>>> c07090556cda92e1023b8ab02118c8c06499f211
+		<td style="border-bottom:1px solid #CCC;">testGetSemester_pendek</td>
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Test Datatype</th>
@@ -222,8 +281,38 @@
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Result</th>
 		<td style="border-bottom:1px solid #CCC;"><span style="color: #0C0;">Passed</span></td>
 	</tr>
+        <tr>
+                <td>{item}</td>
+                <td>{result}</td>
+        </tr>
+{/rows}
 </table>
-<table style="width:100%; font-size:small; margin:10px 0; border-collapse:collapse; border:1px solid #CCC;">
+<table border="0" style="color: blue" cellpadding="4" cellspacing="1">
+
+	<tr>
+		<th style="text-align: left; border-bottom:1px solid #CCC;">Test Name</th>
+		<td style="border-bottom:1px solid #CCC;">testGetEmailBawah</td>
+	</tr>
+	<tr>
+		<th style="text-align: left; border-bottom:1px solid #CCC;">Test Datatype</th>
+		<td style="border-bottom:1px solid #CCC;">String</td>
+	</tr>
+	<tr>
+		<th style="text-align: left; border-bottom:1px solid #CCC;">Expected Datatype</th>
+		<td style="border-bottom:1px solid #CCC;">String</td>
+	</tr>
+	<tr>
+		<th style="text-align: left; border-bottom:1px solid #CCC;">Result</th>
+		<td style="border-bottom:1px solid #CCC;"><span style="color: #0C0;">Passed</span></td>
+	</tr>
+        <tr>
+                <td>{item}</td>
+                <td>{result}</td>
+        </tr>
+{/rows}
+</table>
+<table border="0" style="color: blue" cellpadding="4" cellspacing="1">
+
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Test Name</th>
 		<td style="border-bottom:1px solid #CCC;">testGetEmailAtas</td>
@@ -240,8 +329,14 @@
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Result</th>
 		<td style="border-bottom:1px solid #CCC;"><span style="color: #0C0;">Passed</span></td>
 	</tr>
+        <tr>
+                <td>{item}</td>
+                <td>{result}</td>
+        </tr>
+{/rows}
 </table>
-<table style="width:100%; font-size:small; margin:10px 0; border-collapse:collapse; border:1px solid #CCC;">
+<table border="0" style="color: blue" cellpadding="4" cellspacing="1">
+
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Test Name</th>
 		<td style="border-bottom:1px solid #CCC;">testSmesterCodeToStringFalse</td>
@@ -258,4 +353,9 @@
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Result</th>
 		<td style="border-bottom:1px solid #CCC;"><span style="color: #0C0;">Passed</span></td>
 	</tr>
+        <tr>
+                <td>{item}</td>
+                <td>{result}</td>
+        </tr>
+{/rows}
 </table>

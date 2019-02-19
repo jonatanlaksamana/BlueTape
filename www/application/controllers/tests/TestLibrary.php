@@ -20,6 +20,16 @@ class TestLibrary extends CI_Controller {
 
 
     private function report() {
+        $str = '
+<table border="0" style="color: blue" cellpadding="4" cellspacing="1">
+{rows}
+        <tr>
+                <td>{item}</td>
+                <td>{result}</td>
+        </tr>
+{/rows}
+</table>';
+        $this->unit->set_template($str);
         $this->coverage->stop();
         $writer = new  \SebastianBergmann\CodeCoverage\Report\Html\Facade;
         $writer->process($this->coverage, '../www/application/views/TestDocuments/code-coverage');
@@ -73,7 +83,7 @@ class TestLibrary extends CI_Controller {
         $this->testGetSemester_ganjil();
 
         $this->testGetName();
-        $this->testGetEmail();
+//        $this->testGetEmail();
 
         $this->testGetSemester_pendek();
         $this->testGetEmailBawah();
