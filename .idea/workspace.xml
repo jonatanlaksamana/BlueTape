@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4acb8961-ce72-4f21-99cb-be834c32cfd8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/application/controllers/Tests/TestLibrary.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/application/controllers/Tests/TestLibrary.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/application/views/EntriJadwalDosen/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/application/views/EntriJadwalDosen/main.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/application/views/TestDocuments/code-coverage/BlueTape.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/application/views/TestDocuments/code-coverage/BlueTape.php.html" afterDir="false" />
@@ -25,8 +24,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/application/controllers/Tests/TestLibrary.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="117" column="10" lean-forward="true" selection-start-line="117" selection-start-column="10" selection-end-line="117" selection-end-column="10" />
+            <state relative-caret-position="236">
+              <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
             </state>
           </provider>
         </entry>
@@ -98,9 +97,9 @@
         <option value="$PROJECT_DIR$/www/application/controllers/Auth-dev.php" />
         <option value="$PROJECT_DIR$/codecov.yml" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/www/application/controllers/Tests/TestLibrary.php" />
         <option value="$PROJECT_DIR$/database.yml" />
         <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/www/application/controllers/Tests/TestLibrary.php" />
       </list>
     </option>
   </component>
@@ -265,17 +264,18 @@
       <workItem from="1550133923034" duration="48000" />
       <workItem from="1550560627844" duration="1149000" />
       <workItem from="1550567555643" duration="47000" />
+      <workItem from="1550567680211" duration="30000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30458000" />
+    <option name="totallyTimeSpent" value="30488000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32214764" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32684565" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -415,6 +415,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/application/controllers/Tests/TestLibrary.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/application/config/database.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/application/models/PerubahanKuliah_model.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -446,16 +456,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../BlueTape-master/www/application/controllers/Tests/TestLibrary.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/application/config/database.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/application/controllers/Tests/TestLibrary.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="117" column="10" lean-forward="true" selection-start-line="117" selection-start-column="10" selection-end-line="117" selection-end-column="10" />
-        </state>
-      </provider>
     </entry>
   </component>
 </project>
