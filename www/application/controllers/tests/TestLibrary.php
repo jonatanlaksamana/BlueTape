@@ -67,14 +67,14 @@ class TestLibrary extends CI_Controller {
         $this->testGetSemester_genap();
         $this->testGetSemesterSimple_genap();
         $this->testGetSemesterSimple_ganjil();
-        $this->testSmesterCodeToString();
+        $this->testSmesterCodeToStringGanjil();
+        $this->testSmesterCodeToStringGenap();
+        $this->testSmesterCodeToStringPadat();
         $this->testGetSemester_ganjil();
         $this->testGetSemester_pendek();
-
-//        $this->testGetName();
-
-        $this->testGetEmail();
-
+        $this->testGetEmailBawah();
+        $this->testGetEmailAtas();
+        $this->testSmesterCodeToStringFalse();
         $this->report();
     }
 
@@ -150,9 +150,28 @@ class TestLibrary extends CI_Controller {
         );
     }
 
-    function  testSmesterCodeToString(){
+    function  testSmesterCodeToStringGanjil(){
         $this->unit->run(
-            $this->bluetape->semesterCodeToString("141"),"Ganjil 2014/2015" , __FUNCTION__ , "mengubah smester code menjadi string"
+            $this->bluetape->semesterCodeToString("141"),"Ganjil 2014/2015" , __FUNCTION__ , "mengubah smester Ganjil code menjadi string"
+        );
+
+    }
+    function  testSmesterCodeToStringGenap(){
+        $this->unit->run(
+            $this->bluetape->semesterCodeToString("152"),"Genap 2014/2015" , __FUNCTION__ , "mengubah smester Genap code menjadi string"
+        );
+
+    }
+
+    function  testSmesterCodeToStringPadat(){
+        $this->unit->run(
+            $this->bluetape->semesterCodeToString("164"),"Padat 2015/2016" , __FUNCTION__ , "mengubah smester Padat code menjadi string"
+        );
+
+    }
+    function  testSmesterCodeToStringFalse(){
+        $this->unit->run(
+            $this->bluetape->semesterCodeToString("169"),FALSE, __FUNCTION__ , "mengubah smester Padat code menjadi string"
         );
 
     }
@@ -162,11 +181,21 @@ class TestLibrary extends CI_Controller {
         );
     }
 
-    function  testGetEmail(){
+    //EMAIL MHS SEBELUM 2017
+    function  testGetEmailBawah(){
         $this->unit->run(
-            $this->bluetape->getEmail("2016730025"),"7316025@student.unpar.ac.id",__FUNCTION__ , "mendapatkan email dari npm"
+            $this->bluetape->getEmail("2016730025"),"7316025@student.unpar.ac.id",__FUNCTION__ , "mendapatkan email dari npm mhs angkatan sebelum 2017"
         );
     }
+
+    //EMAIL MHS 2017 KEATAS
+    function  testGetEmailAtas(){
+        $this->unit->run(
+            $this->bluetape->getEmail("2018730048"),"2018730048@student.unpar.ac.id",__FUNCTION__ , "mendapatkan email dari npm mhs angkatan 2017 keatas"
+        );
+    }
+
+    
     
 
 
