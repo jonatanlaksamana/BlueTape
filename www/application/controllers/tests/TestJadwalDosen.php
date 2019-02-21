@@ -26,8 +26,7 @@ class TestJadwalDosen extends CI_Controller {
                 <td></td>
                 <td></td>
         </tr>
- 
-        <br>
+<br>
  
 
 </table>';
