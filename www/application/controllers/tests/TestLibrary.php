@@ -30,8 +30,8 @@ class TestLibrary extends CI_Controller {
 <table border="0"  cellpadding="4" cellspacing="1">
 {rows}
         <tr>
-                <td>{item}</td>
-                <td>{result}</td>
+                <td></td>
+                <td></td>
         </tr>
  
         <br>
@@ -42,7 +42,7 @@ class TestLibrary extends CI_Controller {
         // $this->coverage->stop();
         // $writer = new  \SebastianBergmann\CodeCoverage\Report\Html\Facade;
         // $writer->process($this->coverage, '../www/application/views/TestDocuments/code-coverage');
-        file_put_contents('../www/application/views/TestDocuments/test_Library.html', $this->unit->report());
+
         file_put_contents('../www/application/views/TestDocuments/test_Library.php', $this->unit->report());
 
         // Output result to screen
