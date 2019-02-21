@@ -21,11 +21,11 @@ class TestLibrary extends CI_Controller {
 
 
     private function report() {
-<<<<<<< HEAD
+
         // $this->coverage->stop();
         // $writer = new  \SebastianBergmann\CodeCoverage\Report\Html\Facade;
         // $writer->process($this->coverage, '../www/application/views/TestDocuments/code-coverage');
-=======
+
         $str = '
 <table border="0"  cellpadding="4" cellspacing="1">
 {rows}
@@ -33,16 +33,15 @@ class TestLibrary extends CI_Controller {
                 <td>{item}</td>
                 <td>{result}</td>
         </tr>
- {/rows}
+ 
         <br>
  
 
 </table>';
         $this->unit->set_template($str);
-        $this->coverage->stop();
-        $writer = new  \SebastianBergmann\CodeCoverage\Report\Html\Facade;
-        $writer->process($this->coverage, '../www/application/views/TestDocuments/code-coverage');
->>>>>>> 0d42f24cb94cdc436e242f5a7066f9f2375ffab1
+        // $this->coverage->stop();
+        // $writer = new  \SebastianBergmann\CodeCoverage\Report\Html\Facade;
+        // $writer->process($this->coverage, '../www/application/views/TestDocuments/code-coverage');
         file_put_contents('../www/application/views/TestDocuments/test_Library.html', $this->unit->report());
         file_put_contents('../www/application/views/TestDocuments/test_Library.php', $this->unit->report());
 
@@ -92,12 +91,10 @@ class TestLibrary extends CI_Controller {
         $this->testSmesterCodeToStringPadat();
         $this->testGetSemester_ganjil();
 
-<<<<<<< HEAD
-       $this->testGetName();
-=======
+
         $this->testGetName();
 //        $this->testGetEmail();
->>>>>>> 0d42f24cb94cdc436e242f5a7066f9f2375ffab1
+
 
         $this->testGetSemester_pendek();
         $this->testGetEmailBawah();
