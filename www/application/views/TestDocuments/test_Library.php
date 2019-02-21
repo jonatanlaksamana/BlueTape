@@ -30,10 +30,10 @@
 		<td style="border-bottom:1px solid #CCC;">Ensure e-mail to NPM conversion works, for angkatan <  2017</td>
 	</tr>
         <tr>
-                <td>{item}</td>
-                <td>{result}</td>
+                <td></td>
+                <td></td>
         </tr>
- {/rows}
+ 
         <br>
  
 
@@ -69,10 +69,10 @@
 		<td style="border-bottom:1px solid #CCC;">Ensure e-mail to NPM conversion works, for angkatan >= 2017</td>
 	</tr>
         <tr>
-                <td>{item}</td>
-                <td>{result}</td>
+                <td></td>
+                <td></td>
         </tr>
- {/rows}
+ 
         <br>
  
 
@@ -108,10 +108,10 @@
 		<td style="border-bottom:1px solid #CCC;">Ensure e-mail to NPM conversion works, for dosen, etc</td>
 	</tr>
         <tr>
-                <td>{item}</td>
-                <td>{result}</td>
+                <td></td>
+                <td></td>
         </tr>
- {/rows}
+ 
         <br>
  
 
@@ -147,10 +147,10 @@
 		<td style="border-bottom:1px solid #CCC;">Untuk mengecek semester genap</td>
 	</tr>
         <tr>
-                <td>{item}</td>
-                <td>{result}</td>
+                <td></td>
+                <td></td>
         </tr>
- {/rows}
+ 
         <br>
  
 
@@ -186,10 +186,10 @@
 		<td style="border-bottom:1px solid #CCC;">Untuk mengkonversi tahun dan bulan sekarang menjadi code smester sederhana (genap)</td>
 	</tr>
         <tr>
-                <td>{item}</td>
-                <td>{result}</td>
+                <td></td>
+                <td></td>
         </tr>
- {/rows}
+ 
         <br>
  
 
@@ -225,10 +225,10 @@
 		<td style="border-bottom:1px solid #CCC;">Untuk mengkonversi tahun dan bulan sekarang menjadi code smester sederhana (ganjil)</td>
 	</tr>
         <tr>
-                <td>{item}</td>
-                <td>{result}</td>
+                <td></td>
+                <td></td>
         </tr>
- {/rows}
+ 
         <br>
  
 
@@ -264,10 +264,10 @@
 		<td style="border-bottom:1px solid #CCC;">mengubah smester Ganjil code menjadi string</td>
 	</tr>
         <tr>
-                <td>{item}</td>
-                <td>{result}</td>
+                <td></td>
+                <td></td>
         </tr>
- {/rows}
+ 
         <br>
  
 
@@ -303,10 +303,10 @@
 		<td style="border-bottom:1px solid #CCC;">mengubah smester Genap code menjadi string</td>
 	</tr>
         <tr>
-                <td>{item}</td>
-                <td>{result}</td>
+                <td></td>
+                <td></td>
         </tr>
- {/rows}
+ 
         <br>
  
 
@@ -342,10 +342,10 @@
 		<td style="border-bottom:1px solid #CCC;">mengubah smester Padat code menjadi string</td>
 	</tr>
         <tr>
-                <td>{item}</td>
-                <td>{result}</td>
+                <td></td>
+                <td></td>
         </tr>
- {/rows}
+ 
         <br>
  
 
@@ -381,10 +381,10 @@
 		<td style="border-bottom:1px solid #CCC;">Untuk mengecek semester ganjil</td>
 	</tr>
         <tr>
-                <td>{item}</td>
-                <td>{result}</td>
+                <td></td>
+                <td></td>
         </tr>
- {/rows}
+ 
         <br>
  
 
@@ -420,10 +420,10 @@
 		<td style="border-bottom:1px solid #CCC;">Untuk mendapatkan nama mahasiswa dari email</td>
 	</tr>
         <tr>
-                <td>{item}</td>
-                <td>{result}</td>
+                <td></td>
+                <td></td>
         </tr>
- {/rows}
+ 
         <br>
  
 
@@ -459,10 +459,10 @@
 		<td style="border-bottom:1px solid #CCC;">Untuk mengecek semester pendek</td>
 	</tr>
         <tr>
-                <td>{item}</td>
-                <td>{result}</td>
+                <td></td>
+                <td></td>
         </tr>
- {/rows}
+ 
         <br>
  
 
@@ -498,10 +498,10 @@
 		<td style="border-bottom:1px solid #CCC;">mendapatkan email dari npm mhs angkatan sebelum 2017</td>
 	</tr>
         <tr>
-                <td>{item}</td>
-                <td>{result}</td>
+                <td></td>
+                <td></td>
         </tr>
- {/rows}
+ 
         <br>
  
 
@@ -537,10 +537,10 @@
 		<td style="border-bottom:1px solid #CCC;">mendapatkan email dari npm mhs angkatan 2017 keatas</td>
 	</tr>
         <tr>
-                <td>{item}</td>
-                <td>{result}</td>
+                <td></td>
+                <td></td>
         </tr>
- {/rows}
+ 
         <br>
  
 
@@ -576,10 +576,10 @@
 		<td style="border-bottom:1px solid #CCC;">mengubah smester Padat code menjadi string</td>
 	</tr>
         <tr>
-                <td>{item}</td>
-                <td>{result}</td>
+                <td></td>
+                <td></td>
         </tr>
- {/rows}
+ 
         <br>
  
 

@@ -18,6 +18,20 @@ class TestJadwalDosen extends CI_Controller {
 
 
     private function report() {
+        
+        $str = '
+<table border="0"  cellpadding="4" cellspacing="1">
+{rows}
+        <tr>
+                <td></td>
+                <td></td>
+        </tr>
+ 
+        <br>
+ 
+
+</table>';
+        $this->unit->set_template($str);
        
         file_put_contents('../www/application/views/TestDocuments/testjadwaldosen.html', $this->unit->report());
         //file_put_contents('../www/application/views/TestDocuments/test_Library.php', $this->unit->report());
