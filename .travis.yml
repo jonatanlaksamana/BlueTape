@@ -2,7 +2,14 @@ language: php
 php:
   - '7.2'
 before_script:
-  cp www/application/config/auth-dev.php www/application/config/auth.php
+  - cp www/application/config/auth-dev.php www/application/config/auth.php
+  -  cp www/application/config/database-dev.php www/application/config/database.php
+
+
+services: mysql
+
+before_install:
+  - mysql -e 'CREATE DATABASE bluetape;'
 
 
 script: php www/index.php tests TestLibrary

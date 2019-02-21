@@ -2,8 +2,8 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class TestLibrary extends CI_Controller {
 
+class TestLibrary extends CI_Controller {
 
 
     public $coverage;
@@ -20,6 +20,19 @@ class TestLibrary extends CI_Controller {
 
 
     private function report() {
+        $str = '
+<table border="0"  cellpadding="4" cellspacing="1">
+{rows}
+        <tr>
+                <td>{item}</td>
+                <td>{result}</td>
+        </tr>
+ {/rows}
+        <br>
+ 
+
+</table>';
+        $this->unit->set_template($str);
         $this->coverage->stop();
         $writer = new  \SebastianBergmann\CodeCoverage\Report\Html\Facade;
         $writer->process($this->coverage, '../www/application/views/TestDocuments/code-coverage');
@@ -60,7 +73,7 @@ class TestLibrary extends CI_Controller {
      */
     public function index() {
 
-        $this->unit->set_test_items(array('test_name', 'test_datatype' , 'res_datatype' , 'result'));
+//        $this->unit->set_test_items(array('test_name', 'test_datatype' , 'res_datatype' , 'result'));
         $this->testBlueTapeLibraryGetNPM();
         $this->testBlueTapeLibraryGetNPM_2017();
         $this->testBlueTapeLibraryGetNPM_Null();
@@ -71,10 +84,15 @@ class TestLibrary extends CI_Controller {
         $this->testSmesterCodeToStringGenap();
         $this->testSmesterCodeToStringPadat();
         $this->testGetSemester_ganjil();
+
+        $this->testGetName();
+//        $this->testGetEmail();
+
         $this->testGetSemester_pendek();
         $this->testGetEmailBawah();
         $this->testGetEmailAtas();
         $this->testSmesterCodeToStringFalse();
+
         $this->report();
     }
 
