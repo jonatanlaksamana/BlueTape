@@ -11,7 +11,6 @@ class TestTranskrip_model extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->library('unit_test');
-        $this->unit->use_strict(TRUE);
         $this->load->database();
         $this->load->model('Transkrip_model');
         $this->load->model('JadwalDosen_model' , 'jadwaldosen');
@@ -59,28 +58,66 @@ class TestTranskrip_model extends CI_Controller {
 
         $this->unit->set_test_items(array('test_name', 'test_datatype' , 'res_datatype' , 'result'));
         $this->testRequestBy();
+        $this->testRequestByID();
         $this->report();
     }
 
 
     function testRequestBy(){
-        $testCase = $this->Transkrip_model->requestsBy('7316059@student.unpar.ac.id' , 1 , 1);
-        $excpeted_result = $this->resultTest('7316057@student.unpar.ac.id' , 1 , 1);
-        var_dump($testCase);
-        var_dump($excpeted_result);
+        $this->db->insert('Transkrip', array(
+            'requestByEmail' => 'dummyemail',
+            'requestDateTime' => strftime('%Y-%m-%d %H:%M:%S'),
+            'requestType' =>'dummytype',
+            'requestUsage' => 'tes'
+        ));
+        $this->db->where('requestByEmail', 'dummyemail');
+        $this->db->from('Transkrip');
+        $this->db->order_by('requestDateTime', 'DESC');
+        $query = $this->db->get();
+      
+        $testCase = $this->Transkrip_model->requestsBy('dummyemail' ,null , null);
+        $excpeted_result = $query->result();
         $this->unit->run($testCase , $excpeted_result , __FUNCTION__  );
+        $this->db->delete('Transkrip', array('requestByEmail' => 'dummyemail')); 
     }
 
-   function resultTest($email , $start , $rows){
-    if ($email !== NULL) {
-        $this->db->where('requestByEmail', $email);
+    function testRequestByID(){
+        $this->db->insert('Transkrip', array(
+            
+            'requestByEmail' => 'dummyemail',
+            'requestDateTime' => strftime('%Y-%m-%d %H:%M:%S'),
+            'requestType' =>'dummytype',
+            'requestUsage' => 'tes'
+        ));
+        $insert_id = $this->db->insert_id();
+        $this->db->where('id', $insert_id);
+        $this->db->from('Transkrip');
+        $this->db->order_by('requestDateTime', 'DESC');
+        $query = $this->db->get();
+      
+        $testCase = $this->Transkrip_model->requestByID($insert_id ,null , null);
+        $excpeted_result = $query->result()[0];
+        $this->unit->run($testCase , $excpeted_result , __FUNCTION__  );
+        $this->db->delete('Transkrip', array('id' => $insert_id));
     }
-    if ($start !== NULL && $rows !== NULL) {
-        $this->db->limit($rows, $start);
-    }
-    $this->db->from('Transkrip');
-    $this->db->order_by('requestDateTime', 'DESC');
-    $query = $this->db->get();
-    return $query->result();
+
+    function requestTypesForbidden(){
+        $this->db->insert('Transkrip', array(
+            
+            'requestByEmail' => 'dummyemail',
+            'requestDateTime' => strftime('%Y-%m-%d %H:%M:%S'),
+            'requestType' =>'dummytype',
+            'requestUsage' => 'tes'
+        ));
+        $insert_id = $this->db->insert_id();
+        $this->db->where('id', $insert_id);
+        $this->db->from('Transkrip');
+        $this->db->order_by('requestDateTime', 'DESC');
+        $query = $this->db->get();
+      
+        $testCase = $this->Transkrip_model->requestByID($insert_id ,null , null);
+        $excpeted_result = $query->result()[0];
+        $this->unit->run($testCase , $excpeted_result , __FUNCTION__  );
+        $this->db->delete('Transkrip', array('id' => $insert_id));
     }
 }
