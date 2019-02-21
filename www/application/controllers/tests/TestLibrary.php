@@ -33,10 +33,10 @@ class TestLibrary extends CI_Controller {
 
 </table>';
         $this->unit->set_template($str);
-        $this->coverage->stop();
-        $writer = new  \SebastianBergmann\CodeCoverage\Report\Html\Facade;
-        $writer->process($this->coverage, '../www/application/views/TestDocuments/code-coverage');
-        file_put_contents('../www/application/views/TestDocuments/test_Library.html', $this->unit->report());
+        // $this->coverage->stop();
+        // $writer = new  \SebastianBergmann\CodeCoverage\Report\Html\Facade;
+        // $writer->process($this->coverage, '../www/application/views/TestDocuments/code-coverage');
+        // file_put_contents('../www/application/views/TestDocuments/test_Library.html', $this->unit->report());
         file_put_contents('../www/application/views/TestDocuments/test_Library.php', $this->unit->report());
 
         // Output result to screen
