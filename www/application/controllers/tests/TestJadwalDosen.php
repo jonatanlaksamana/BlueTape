@@ -94,7 +94,7 @@ class TestJadwalDosen extends CI_Controller {
         $this->db->order_by('requestDateTime', 'DESC');
         $query = $this->db->get();
         $ex=  $query->result();
-        $testCase = $this->$jadwaldosen_model->requestBy('fikrizzaki' , null , null );
+        $testCase = $this->JadwalDosen_model->requestBy('fikrizzaki' , null , null );
         $this->unit->run($testCase,$ex,__FUNCTION__);
     }
 
@@ -206,7 +206,7 @@ class TestJadwalDosen extends CI_Controller {
         $jenis ='responsi';
         $label = 'entahlah';
         $lastUpdate=date('Y-m-d H:i:s');
-        
+
         $data = array(
             'user'=> $user,
             'hari'=>$hari,
@@ -216,23 +216,20 @@ class TestJadwalDosen extends CI_Controller {
             'label_jadwal'=>$label,
             'lastupdate'=>$lastUpdate
         );
-        $this->JadwalDosen_model->addJadwal($data);
 
+        $this->JadwalDosen_model->addJadwal($data);
+        $insert_id = $this->db->insert_id();
         $newData = array(
             'user'=>'testcase',
         );
-        $this->JadwalDosen_model->updateJadwal(1,$newData);
-
-        $this->db->where('id', 1);
+        $this->JadwalDosen_model->updateJadwal($insert_id,$newData);
+        $this->db->where('id', $insert_id);
         $this->db->from('jadwal_dosen');
         $query = $this->db->get();
         $row =  $query->row();
-        
-        $testCase = 'testcase';
+        $testCase = $row->user;
         $ex = 'testcase' ;
-        var_dump($testCase);
-
         $this->unit->run($testCase,$ex,__FUNCTION__);
-        // $this->db->delete('jadwal_dosen',array('user'=>'jaki'));
+         $this->db->delete('jadwal_dosen',array('id'=>$insert_id));
     }
 }
