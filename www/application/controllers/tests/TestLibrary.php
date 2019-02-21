@@ -24,10 +24,10 @@ class TestLibrary extends CI_Controller {
 <table border="0"  cellpadding="4" cellspacing="1">
 {rows}
         <tr>
-                <td>{item}</td>
-                <td>{result}</td>
+                <td></td>
+                <td></td>
         </tr>
- {/rows}
+ 
         <br>
  
 
