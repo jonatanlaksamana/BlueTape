@@ -78,8 +78,16 @@ class TestModel extends CI_Controller {
     }
 
     public function testRequest(){
-        $testCase = $this->PerubahanKuliah_model->requestsBy('7316081@student.unpar.ac.id' , 1 ,1 );
-        $ex = $this->testGetAll('7316081@student.unpar.ac.id' , 1 , 1);
+
+            $this->db->where('requestByEmail', '7316081@student.unpar.ac.id');
+            $this->db->from('PerubahanKuliah');
+        $this->db->order_by('requestDateTime', 'DESC');
+        $query = $this->db->get();
+        $ex = $query->result();
+
+
+        $testCase = $this->PerubahanKuliah_model->requestsBy('7316081@student.unpar.ac.id' , null ,null );
+
         var_dump($testCase);
         var_dump($ex);
         $this->unit->run($testCase,$ex ,"aaa");
@@ -87,18 +95,8 @@ class TestModel extends CI_Controller {
     }
 
 
-    function  testGetAll($email , $start , $rows){
-        if ($email !== NULL) {
-            $this->db->where('requestByEmail', $email);
-        }
-        if ($start !== NULL && $rows !== NULL) {
-            $this->db->limit($rows, $start);
-        }
-        $this->db->from('PerubahanKuliah');
-        $this->db->order_by('requestDateTime', 'DESC');
-        $query = $this->db->get();
-        return $query->result_array();
-    }
+
+
 
 
 
