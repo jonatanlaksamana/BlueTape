@@ -19,8 +19,8 @@ class TestJadwalDosen extends CI_Controller {
 
     private function report() {
        
-        file_put_contents('../www/application/views/TestDocuments/test_Library.html', $this->unit->report());
-        file_put_contents('../www/application/views/TestDocuments/test_Library.php', $this->unit->report());
+        file_put_contents('../www/application/views/TestDocuments/testjadwaldosen.html', $this->unit->report());
+        //file_put_contents('../www/application/views/TestDocuments/test_Library.php', $this->unit->report());
 
         // Output result to screen
         $statistics = [
