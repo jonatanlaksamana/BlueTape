@@ -64,12 +64,26 @@ class TestJadwalDosen extends CI_Controller {
         $this->testKolomKeHari();
         $this->testHariKeKolom();
         $this->testCekJadwalByJamMulai();
+        //$this->testRequestBy();
+        $this->testAddJadwal();
+        $this->testUpdateJadwal();
         $this->report();
     }
 
    
 
 
+
+    public function testRequestBy(){
+
+        $this->db->where('requestByEmail', 'fikrizzaki');
+        $this->db->from('jadwal_dosen');
+        $this->db->order_by('requestDateTime', 'DESC');
+        $query = $this->db->get();
+        $ex=  $query->result();
+        $testCase = $this->$jadwaldosen_model->requestBy('fikrizzaki' , null , null );
+        $this->unit->run($testCase,$ex,__FUNCTION__);
+    }
 
    public function testGetAllJadwal(){
         $testCase = $this->JadwalDosen_model->getAllJadwal();
@@ -118,8 +132,8 @@ class TestJadwalDosen extends CI_Controller {
     }
 
     public function testKolomKeHari(){
-        $testCase = $this->JadwalDosen_model->kolomKeHari(1);
-        $result = $this->kolomKeHari(1);
+        $testCase = $this->JadwalDosen_model->kolomKeHari("B");
+        $result = 0;
         $this->unit->run($testCase,$result,__FUNCTION__);
     }
 
@@ -129,12 +143,8 @@ class TestJadwalDosen extends CI_Controller {
 
     public function testHariKeKolom(){
         $testCase = $this->JadwalDosen_model->hariKeKolom(1);
-        $result = $this->hariKeKolom(1);
+        $result = "C";
         $this->unit->run($testCase,$result,__FUNCTION__);
-    }
-
-    public function hariKeKolom($col) {
-        return substr("BCDEF" , $col, 1);
     }
 
     public function testCekJadwalByJamMulai(){
@@ -145,7 +155,71 @@ class TestJadwalDosen extends CI_Controller {
 
     public function cekJadwalByJamMulai($jam_mulai,$hari,$user){
         $query = $this->db->get_where('jadwal_dosen', array('jam_mulai' => $jam_mulai, 'hari' =>$hari, 'user' =>$user ));
-        return $query->result();
+        return $query->result();       
+    }
+
+   public function testAddJadwal(){
+        $user = 'jaki';
+        $hari = 1;
+        $jam_mulai =1;
+        $durasi = 1;
+        $jenis ='responsi';
+        $label = 'entahlah';
+        $lastUpdate=date('Y-m-d H:i:s');
         
-   }
+        $data = array(
+            'user'=> $user,
+            'hari'=>$hari,
+            'jam_mulai'=>$jam_mulai,
+            'durasi'=>$durasi,
+            'jenis_jadwal'=>$jenis,
+            'label_jadwal'=>$label,
+            'lastupdate'=>$lastUpdate
+        );
+        $this->JadwalDosen_model->addJadwal($data);
+
+        $testCase = $this->db->affected_rows();
+        $ex = 1 ;
+
+        $this->unit->run($testCase,$ex,__FUNCTION__);
+        $this->db->delete('jadwal_dosen',array('user'=>'jaki'));
+    }
+
+    public function testUpdateJadwal(){
+        $user = 'jaki';
+        $hari = 1;
+        $jam_mulai =1;
+        $durasi = 1;
+        $jenis ='responsi';
+        $label = 'entahlah';
+        $lastUpdate=date('Y-m-d H:i:s');
+        
+        $data = array(
+            'user'=> $user,
+            'hari'=>$hari,
+            'jam_mulai'=>$jam_mulai,
+            'durasi'=>$durasi,
+            'jenis_jadwal'=>$jenis,
+            'label_jadwal'=>$label,
+            'lastupdate'=>$lastUpdate
+        );
+        $this->JadwalDosen_model->addJadwal($data);
+
+        $newData = array(
+            'user'=>'testcase',
+        );
+        $this->JadwalDosen_model->updateJadwal(1,$newData);
+
+        $this->db->where('id', 1);
+        $this->db->from('jadwal_dosen');
+        $query = $this->db->get();
+        $row =  $query->row();
+        
+        $testCase = 'testcase';
+        $ex = 'testcase' ;
+        var_dump($testCase);
+
+        $this->unit->run($testCase,$ex,__FUNCTION__);
+        // $this->db->delete('jadwal_dosen',array('user'=>'jaki'));
+    }
 }

@@ -2,8 +2,8 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class TestLibrary extends CI_Controller {
 
+class TestLibrary extends CI_Controller {
 
 
     public $coverage;
@@ -20,9 +20,22 @@ class TestLibrary extends CI_Controller {
 
 
     private function report() {
-        // $this->coverage->stop();
-        // $writer = new  \SebastianBergmann\CodeCoverage\Report\Html\Facade;
-        // $writer->process($this->coverage, '../www/application/views/TestDocuments/code-coverage');
+        $str = '
+<table border="0"  cellpadding="4" cellspacing="1">
+{rows}
+        <tr>
+                <td>{item}</td>
+                <td>{result}</td>
+        </tr>
+ {/rows}
+        <br>
+ 
+
+</table>';
+        $this->unit->set_template($str);
+        $this->coverage->stop();
+        $writer = new  \SebastianBergmann\CodeCoverage\Report\Html\Facade;
+        $writer->process($this->coverage, '../www/application/views/TestDocuments/code-coverage');
         file_put_contents('../www/application/views/TestDocuments/test_Library.html', $this->unit->report());
         file_put_contents('../www/application/views/TestDocuments/test_Library.php', $this->unit->report());
 
@@ -60,21 +73,26 @@ class TestLibrary extends CI_Controller {
      */
     public function index() {
 
-        $this->unit->set_test_items(array('test_name', 'test_datatype' , 'res_datatype' , 'result'));
+//        $this->unit->set_test_items(array('test_name', 'test_datatype' , 'res_datatype' , 'result'));
         $this->testBlueTapeLibraryGetNPM();
         $this->testBlueTapeLibraryGetNPM_2017();
-        $this->testGetSemester();
-        $this->testGetSemesterSimple();
+        $this->testBlueTapeLibraryGetNPM_Null();
+        $this->testGetSemester_genap();
+        $this->testGetSemesterSimple_genap();
+        $this->testGetSemesterSimple_ganjil();
         $this->testSmesterCodeToStringGanjil();
         $this->testSmesterCodeToStringGenap();
         $this->testSmesterCodeToStringPadat();
         $this->testGetSemester_ganjil();
 
-//        $this->testGetName();
+        $this->testGetName();
+//        $this->testGetEmail();
 
+        $this->testGetSemester_pendek();
         $this->testGetEmailBawah();
         $this->testGetEmailAtas();
         $this->testSmesterCodeToStringFalse();
+
         $this->report();
     }
 
@@ -96,22 +114,48 @@ class TestLibrary extends CI_Controller {
         );
     }
 
-    function testGetSemester(){
+    public function testBlueTapeLibraryGetNPM_Null() {
         $this->unit->run(
-            $this->bluetape->yearMonthToSemesterCode("2016",1),"162", __FUNCTION__ , "Untuk mengecek semester"
+            $this->bluetape->getNPM('fikrizzaki@gmail.com'),
+            NULL,
+            __FUNCTION__,
+            'Ensure e-mail to NPM conversion works, for dosen, etc'
+        );
+    }
+
+
+    function testGetSemester_genap(){
+        $this->unit->run(
+            $this->bluetape->yearMonthToSemesterCode("2016",1),"162", __FUNCTION__ , "Untuk mengecek semester genap"
 
         );
     }
 
     function testGetSemester_ganjil(){
         $this->unit->run(
-            $this->bluetape->yearMonthToSemesterCode("2016",9),"161", __FUNCTION__ , "Untuk mengecek semester"
+            $this->bluetape->yearMonthToSemesterCode("2016",9),"161", __FUNCTION__ , "Untuk mengecek semester ganjil"
 
         );
     }
-    function testGetSemesterSimple(){
+
+    function testGetSemester_pendek(){
         $this->unit->run(
-            $this->bluetape->yearMonthToSemesterCodeSimplified("2016",1),"162", __FUNCTION__ , "Untuk mengkonversi tahun dan bulan sekarang menjadi code smester sederhana"
+            $this->bluetape->yearMonthToSemesterCode("2016",6),"164", __FUNCTION__ , "Untuk mengecek semester pendek"
+
+        );
+    }
+
+
+    function testGetSemesterSimple_genap(){
+        $this->unit->run(
+            $this->bluetape->yearMonthToSemesterCodeSimplified("2016",1),"162", __FUNCTION__ , "Untuk mengkonversi tahun dan bulan sekarang menjadi code smester sederhana (genap)"
+
+        );
+    }
+
+    function testGetSemesterSimple_ganjil(){
+        $this->unit->run(
+            $this->bluetape->yearMonthToSemesterCodeSimplified("2016",8),"161", __FUNCTION__ , "Untuk mengkonversi tahun dan bulan sekarang menjadi code smester sederhana (ganjil)"
 
         );
     }
