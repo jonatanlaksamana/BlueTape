@@ -12,14 +12,20 @@ class TestLibrary extends CI_Controller {
         parent::__construct();
         $this->load->library('unit_test');
         $this->unit->use_strict(TRUE);
-        $this->coverage = new SebastianBergmann\CodeCoverage\CodeCoverage;
-        $this->coverage->filter()->addDirectoryToWhitelist('application/libraries');
-        $this->coverage->start('UnitTests');
+        // $this->coverage = new SebastianBergmann\CodeCoverage\CodeCoverage;
+        // $this->coverage->filter()->addDirectoryToWhitelist('application/libraries');
+        // $this->coverage->start('UnitTests');
         $this->load->library('BlueTape');
+        
     }
 
 
     private function report() {
+
+        // $this->coverage->stop();
+        // $writer = new  \SebastianBergmann\CodeCoverage\Report\Html\Facade;
+        // $writer->process($this->coverage, '../www/application/views/TestDocuments/code-coverage');
+
         $str = '
 <table border="0"  cellpadding="4" cellspacing="1">
 {rows}
@@ -27,15 +33,15 @@ class TestLibrary extends CI_Controller {
                 <td>{item}</td>
                 <td>{result}</td>
         </tr>
- {/rows}
+ 
         <br>
  
 
 </table>';
         $this->unit->set_template($str);
-        $this->coverage->stop();
-        $writer = new  \SebastianBergmann\CodeCoverage\Report\Html\Facade;
-        $writer->process($this->coverage, '../www/application/views/TestDocuments/code-coverage');
+        // $this->coverage->stop();
+        // $writer = new  \SebastianBergmann\CodeCoverage\Report\Html\Facade;
+        // $writer->process($this->coverage, '../www/application/views/TestDocuments/code-coverage');
         file_put_contents('../www/application/views/TestDocuments/test_Library.html', $this->unit->report());
         file_put_contents('../www/application/views/TestDocuments/test_Library.php', $this->unit->report());
 
@@ -85,8 +91,10 @@ class TestLibrary extends CI_Controller {
         $this->testSmesterCodeToStringPadat();
         $this->testGetSemester_ganjil();
 
+
         $this->testGetName();
 //        $this->testGetEmail();
+
 
         $this->testGetSemester_pendek();
         $this->testGetEmailBawah();
@@ -163,7 +171,7 @@ class TestLibrary extends CI_Controller {
 
     function testGetName(){
         $this->unit->run(
-            $this->bluetape->getName("7316081@student.unpar.ac.id"),"JONATHAN LAKSAMANA PURNOMO", __FUNCTION__ , "Untuk mendapatkan nama mahasiswa dari email"
+            $this->bluetape->getName("7316057@student.unpar.ac.id"),"CHRISSANDI SUTRISNO", __FUNCTION__ , "Untuk mendapatkan nama mahasiswa dari email"
 
         );
     }

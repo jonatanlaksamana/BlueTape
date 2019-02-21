@@ -15,6 +15,7 @@ class Transkrip_model extends CI_Model {
      * @param type $email email yang melakukan request atau NULL untuk semua
      * @return array hasil dari $query->result()
      */
+    // select * from transkrip where email = email limit start , end
     public function requestsBy($email, $rows = NULL, $start = NULL) {
         if ($email !== NULL) {
             $this->db->where('requestByEmail', $email);
@@ -77,5 +78,4 @@ class Transkrip_model extends CI_Model {
         }
         return $forbiddenTypes;
     }
-
 }
