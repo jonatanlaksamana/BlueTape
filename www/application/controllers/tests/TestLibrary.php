@@ -21,13 +21,16 @@ class TestLibrary extends CI_Controller {
 
     private function report() {
         $str = '
-<table border="0" style="color: blue" cellpadding="4" cellspacing="1">
+<table border="0"  cellpadding="4" cellspacing="1">
 {rows}
         <tr>
                 <td>{item}</td>
                 <td>{result}</td>
         </tr>
-{/rows}
+ {/rows}
+        <br>
+ 
+
 </table>';
         $this->unit->set_template($str);
         $this->coverage->stop();
@@ -70,7 +73,7 @@ class TestLibrary extends CI_Controller {
      */
     public function index() {
 
-        $this->unit->set_test_items(array('test_name', 'test_datatype' , 'res_datatype' , 'result'));
+//        $this->unit->set_test_items(array('test_name', 'test_datatype' , 'res_datatype' , 'result'));
         $this->testBlueTapeLibraryGetNPM();
         $this->testBlueTapeLibraryGetNPM_2017();
         $this->testBlueTapeLibraryGetNPM_Null();
