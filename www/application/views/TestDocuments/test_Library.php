@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 <table border="0"  cellpadding="4" cellspacing="1">
 
@@ -24,7 +23,7 @@
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Line Number</th>
-		<td style="border-bottom:1px solid #CCC;">104</td>
+		<td style="border-bottom:1px solid #CCC;">112</td>
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Notes</th>
@@ -63,7 +62,7 @@
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Line Number</th>
-		<td style="border-bottom:1px solid #CCC;">113</td>
+		<td style="border-bottom:1px solid #CCC;">121</td>
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Notes</th>
@@ -102,7 +101,7 @@
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Line Number</th>
-		<td style="border-bottom:1px solid #CCC;">122</td>
+		<td style="border-bottom:1px solid #CCC;">130</td>
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Notes</th>
@@ -141,7 +140,7 @@
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Line Number</th>
-		<td style="border-bottom:1px solid #CCC;">129</td>
+		<td style="border-bottom:1px solid #CCC;">137</td>
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Notes</th>
@@ -180,7 +179,7 @@
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Line Number</th>
-		<td style="border-bottom:1px solid #CCC;">151</td>
+		<td style="border-bottom:1px solid #CCC;">159</td>
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Notes</th>
@@ -219,7 +218,7 @@
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Line Number</th>
-		<td style="border-bottom:1px solid #CCC;">158</td>
+		<td style="border-bottom:1px solid #CCC;">166</td>
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Notes</th>
@@ -258,7 +257,7 @@
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Line Number</th>
-		<td style="border-bottom:1px solid #CCC;">173</td>
+		<td style="border-bottom:1px solid #CCC;">181</td>
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Notes</th>
@@ -297,7 +296,7 @@
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Line Number</th>
-		<td style="border-bottom:1px solid #CCC;">179</td>
+		<td style="border-bottom:1px solid #CCC;">187</td>
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Notes</th>
@@ -336,7 +335,7 @@
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Line Number</th>
-		<td style="border-bottom:1px solid #CCC;">186</td>
+		<td style="border-bottom:1px solid #CCC;">194</td>
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Notes</th>
@@ -375,7 +374,7 @@
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Line Number</th>
-		<td style="border-bottom:1px solid #CCC;">136</td>
+		<td style="border-bottom:1px solid #CCC;">144</td>
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Notes</th>
@@ -398,7 +397,7 @@
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Test Datatype</th>
-		<td style="border-bottom:1px solid #CCC;">String</td>
+		<td style="border-bottom:1px solid #CCC;">Null</td>
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Expected Datatype</th>
@@ -406,7 +405,7 @@
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Result</th>
-		<td style="border-bottom:1px solid #CCC;"><span style="color: #0C0;">Passed</span></td>
+		<td style="border-bottom:1px solid #CCC;"><span style="color: #C00;">Failed</span></td>
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">File Name</th>
@@ -414,7 +413,7 @@
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Line Number</th>
-		<td style="border-bottom:1px solid #CCC;">166</td>
+		<td style="border-bottom:1px solid #CCC;">174</td>
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Notes</th>
@@ -453,7 +452,7 @@
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Line Number</th>
-		<td style="border-bottom:1px solid #CCC;">143</td>
+		<td style="border-bottom:1px solid #CCC;">151</td>
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Notes</th>
@@ -492,7 +491,7 @@
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Line Number</th>
-		<td style="border-bottom:1px solid #CCC;">205</td>
+		<td style="border-bottom:1px solid #CCC;">213</td>
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Notes</th>
@@ -531,7 +530,7 @@
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Line Number</th>
-		<td style="border-bottom:1px solid #CCC;">212</td>
+		<td style="border-bottom:1px solid #CCC;">220</td>
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Notes</th>
@@ -570,7 +569,7 @@
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Line Number</th>
-		<td style="border-bottom:1px solid #CCC;">192</td>
+		<td style="border-bottom:1px solid #CCC;">200</td>
 	</tr>
 	<tr>
 		<th style="text-align: left; border-bottom:1px solid #CCC;">Notes</th>
@@ -585,5 +584,3 @@
  
 
 </table>
-=======
->>>>>>> 30338cc0b46abe2a24c997bf6ab28be8e518f3ca
