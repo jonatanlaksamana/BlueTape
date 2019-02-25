@@ -15,9 +15,11 @@ class TestAll extends CI_Controller
         $this->load->library('unit_test');
         $this->coverage = new SebastianBergmann\CodeCoverage\CodeCoverage;
         $this->coverage->filter()->addDirectoryToWhitelist('application/libraries');
+        $this->coverage->filter()->addDirectoryToWhitelist('application/models');
         $this->coverage->start('UnitTests');
-        $this->load->library('BlueTape');
         $this->load->model('JadwalDosen_model');
+        $this->load->library('BlueTape');
+
         $this->load->model('Transkrip_model');
         $this->load->model('PerubahanKuliah_model');
         $this->load->database();
@@ -418,7 +420,7 @@ class TestAll extends CI_Controller
 
         $this->coverage->stop();
         $writer = new  \SebastianBergmann\CodeCoverage\Report\Html\Facade;
-        $writer->process($this->coverage, '../TestDocuments/code-coverage');
+        $writer->process($this->coverage, '../TestDocuments/codecoverageAll');
         file_put_contents('../TestDocuments/TestPlan/TestAll.html', $this->unit->report());
 
         // Output result to screen
