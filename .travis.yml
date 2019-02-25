@@ -14,4 +14,4 @@ before_script:
 
 
 script:
-- php www/index.php tests testmodel
+- php www/index.php tests TestModel
