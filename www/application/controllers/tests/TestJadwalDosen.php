@@ -103,18 +103,17 @@ class TestJadwalDosen extends CI_Controller {
 
 
    public function testGetAllJadwal(){
+         $query = $this->db->query('SELECT jadwal_dosen.*, bluetape_userinfo.name
+         FROM jadwal_dosen
+         INNER JOIN bluetape_userinfo ON jadwal_dosen.user=bluetape_userinfo.email');
+
         $testCase = $this->JadwalDosen_model->getAllJadwal();
-        $result = $this->getAllJadwal();
+        $result = $query->result();
         $this->unit->run($testCase,$result,__FUNCTION__);
 
     }
 
-    public function getAllJadwal(){
-        $query = $this->db->query('SELECT jadwal_dosen.*, bluetape_userinfo.name
-        FROM jadwal_dosen
-        INNER JOIN bluetape_userinfo ON jadwal_dosen.user=bluetape_userinfo.email');
-        return $query->result();
-   }
+
 
     public function testGetJadwalByUserName(){
         $user='jojo';
