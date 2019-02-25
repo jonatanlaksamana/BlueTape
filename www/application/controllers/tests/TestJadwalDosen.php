@@ -18,7 +18,7 @@ class TestJadwalDosen extends CI_Controller {
 
 
     private function report() {
-        
+
         $str = '
 <table border="0"  cellpadding="4" cellspacing="1">
 {rows}
@@ -27,11 +27,11 @@ class TestJadwalDosen extends CI_Controller {
                 <td></td>
         </tr>
 <br>
- 
+
 
 </table>';
         $this->unit->set_template($str);
-       
+
         file_put_contents('../www/application/views/TestDocuments/testjadwaldosen.html', $this->unit->report());
         //file_put_contents('../www/application/views/TestDocuments/test_Library.php', $this->unit->report());
 
@@ -83,10 +83,11 @@ class TestJadwalDosen extends CI_Controller {
         $this->report();
     }
 
-   
 
 
 
+
+//still bugged
     public function testRequestBy(){
 
         $this->db->where('requestByEmail', 'fikrizzaki');
@@ -97,6 +98,9 @@ class TestJadwalDosen extends CI_Controller {
         $testCase = $this->JadwalDosen_model->requestBy('fikrizzaki' , null , null );
         $this->unit->run($testCase,$ex,__FUNCTION__);
     }
+
+
+
 
    public function testGetAllJadwal(){
         $testCase = $this->JadwalDosen_model->getAllJadwal();
@@ -168,7 +172,7 @@ class TestJadwalDosen extends CI_Controller {
 
     public function cekJadwalByJamMulai($jam_mulai,$hari,$user){
         $query = $this->db->get_where('jadwal_dosen', array('jam_mulai' => $jam_mulai, 'hari' =>$hari, 'user' =>$user ));
-        return $query->result();       
+        return $query->result();
     }
 
    public function testAddJadwal(){
@@ -178,8 +182,7 @@ class TestJadwalDosen extends CI_Controller {
         $durasi = 1;
         $jenis ='responsi';
         $label = 'entahlah';
-        $lastUpdate=date('Y-m-d H:i:s');
-        
+        $lastUpdate='2019-02-25 09:48:20';
         $data = array(
             'user'=> $user,
             'hari'=>$hari,
@@ -205,7 +208,7 @@ class TestJadwalDosen extends CI_Controller {
         $durasi = 1;
         $jenis ='responsi';
         $label = 'entahlah';
-        $lastUpdate=date('Y-m-d H:i:s');
+        $lastUpdate='2019-02-25 09:48:20';
 
         $data = array(
             'user'=> $user,
