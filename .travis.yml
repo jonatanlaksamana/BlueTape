@@ -6,8 +6,8 @@ services: mysql
 before_script:
   - cp www/application/config/auth-dev.php www/application/config/auth.php
   -  cp www/application/config/database-dev.php www/application/config/database.php
-
-  - mysql -u 'root --password=""' < test/travis.sql
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS bluetape;'  
+  - mysql -u root --default-character-set=utf8 bluetape < TestDB/travis.sql
 
 
 script:
