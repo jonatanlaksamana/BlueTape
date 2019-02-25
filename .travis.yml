@@ -7,9 +7,11 @@ before_script:
   - cp www/application/config/auth-dev.php www/application/config/auth.php
   -  cp www/application/config/database-dev.php www/application/config/database.php
   - mysql -e 'CREATE DATABASE bluetape;'
-  - mysql -u root -e "CREATE USER 'bluetape'@'localhost' IDENTIFIED BY 'bluetape';"
-  - mysql -u root -e "GRANT ALL ON bluetape.* TO 'bluetape'@'localhost';"
+  - mysql -e 'CREATE USER "travis'@'localhost";'
+  - mysql -e 'GRANT ALL PRIVILEGES ON * . * TO "travis'@'localhost";'
+  - mysql -e 'FLUSH PRIVILEGES;'
+  - php www/index.php migrate
 
 script:
-  - php www/index.php migrate
+
   - php www/index.php tests TestLibrary
