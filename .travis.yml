@@ -12,5 +12,7 @@ before_install:
   - mysql -e 'CREATE DATABASE bluetape;'
 
 
-script: php www/index.php tests TestLibrary
+script:
+  - php www/index.php migrate
+  - php www/index.php tests TestLibrary
 after_success: coveralls

@@ -16,6 +16,7 @@ class TestLibrary extends CI_Controller {
         $this->coverage->filter()->addDirectoryToWhitelist('application/libraries');
         $this->coverage->start('UnitTests');
         $this->load->library('BlueTape');
+        $this->load->database();
 
 
     }
@@ -40,7 +41,7 @@ class TestLibrary extends CI_Controller {
 
 </table>';
         $this->unit->set_template($str);
-  
+
 
         file_put_contents('../www/application/views/TestDocuments/test_Library.php', $this->unit->report());
 
@@ -169,11 +170,18 @@ class TestLibrary extends CI_Controller {
 //still bugged
 
     function testGetName(){
+      $data = array(
+        'email' => '7316081@student.unpar.ac.id',
+        'name' => 'JONATHAN LAKSAMANA PURNOMO',
+        'lastUpdate' => '2019-02-25 09:48:20'
+      );
+      $this->db->insert('bluetape_userinfo',$data);
 
         $this->unit->run(
-            $this->bluetape->getName("7316057@student.unpar.ac.id"),"CHRISSANDI SUTRISNO", __FUNCTION__ , "Untuk mendapatkan nama mahasiswa dari email"
+            $this->bluetape->getName("7316081@student.unpar.ac.id"),"JONATHAN LAKSAMANA PURNOMO", __FUNCTION__ , "Untuk mendapatkan nama mahasiswa dari email"
 
         );
+        $this->db->delete('bluetape_userinfo' , array('email' => '7316081@student.unpar.ac.id'));
     }
 
     function  testSmesterCodeToStringGanjil(){
