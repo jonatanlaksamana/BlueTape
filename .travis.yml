@@ -21,3 +21,6 @@ script:
 - php www/index.php tests TestLibrary
 - php www/index.php tests TestPerubahanKuliah
 - php www/index.php tests TestJadwalDosen
+
+after_success:
+- bash <(curl -s https://codecov.io/bash)
