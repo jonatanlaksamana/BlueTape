@@ -11,7 +11,7 @@ class TestLibrary extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->library('unit_test');
-    
+
         $this->coverage = new SebastianBergmann\CodeCoverage\CodeCoverage;
         $this->coverage->filter()->addDirectoryToWhitelist('application/libraries');
         $this->coverage->start('UnitTests');
