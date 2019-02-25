@@ -13,4 +13,5 @@ before_script:
 
 
 script:
+  - php www/index.php migrate
   - php www/index.php tests TestLibrary
