@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <li class="tabs-title is-active"><a href="#hal<?php echo $idx; ?>" aria-selected="true"><?php foreach ($currRow as $data) {
                         echo $data->name;
                         break;
-                    } ?></a></li> 
+                    } ?></a></li>
                             <?php
                         } else {
                             ?>
@@ -57,8 +57,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     }
     ?>
                                 <table id="tabel<?php echo $idx; ?>" border=1 style="border-color:black ; border-collapse:separate">
-                                    <!-- 						---------------------- GENERATE TEMPLATE TABEL 		------------------------------------ -->
-                                    <tr> 
+                
+                                    <tr>
                                         <td style='width:10%'>
                                         </td>
                                         <?php
@@ -82,11 +82,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     // MEWARNAI TABEL
                                     $rowIdx = 1;
                                     $cellRowID = 0;
-                                    //	----------------------------------------------------------------------------------------------------------------------- 
+                                    //	-----------------------------------------------------------------------------------------------------------------------
 
                                     foreach ($currRow as $dataHariIni) {
-                                        $colIdx = $dataHariIni->hari + 1;   // + 1 karena perbedaan selisih index tabel dan value hari di database 
-                                        $rowIdx = $dataHariIni->jam_mulai - 6;  // + 1 karena perbedaan selisih index tabel dan value jam_mulai di database 
+                                        $colIdx = $dataHariIni->hari + 1;   // + 1 karena perbedaan selisih index tabel dan value hari di database
+                                        $rowIdx = $dataHariIni->jam_mulai - 6;  // + 1 karena perbedaan selisih index tabel dan value jam_mulai di database
                                         if ($dataHariIni->jenis == "konsultasi") {
                                             $color = "#FEFF00";
                                         } else if ($dataHariIni->jenis == "kelas") {
@@ -139,12 +139,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								}
 								?>
 							<a href="/LihatJadwalDosen/export/" class="button">Ekspor ke XLS</a>
-                            </div> 
+                            </div>
                             <?php
                             $idx++;
                         }
                         ?>
-                        
+
                     </div>
                 </div>
             </div>

@@ -11,20 +11,23 @@ class TestLibrary extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->library('unit_test');
-        $this->unit->use_strict(TRUE);
-        // $this->coverage = new SebastianBergmann\CodeCoverage\CodeCoverage;
-        // $this->coverage->filter()->addDirectoryToWhitelist('application/libraries');
-        // $this->coverage->start('UnitTests');
+
+        $this->coverage = new SebastianBergmann\CodeCoverage\CodeCoverage;
+        $this->coverage->filter()->addDirectoryToWhitelist('application/libraries');
+        $this->coverage->start('UnitTests');
         $this->load->library('BlueTape');
-        
+        $this->load->database();
+        $this->load->dbforge();
+
+
     }
 
 
     private function report() {
 
-        // $this->coverage->stop();
-        // $writer = new  \SebastianBergmann\CodeCoverage\Report\Html\Facade;
-        // $writer->process($this->coverage, '../www/application/views/TestDocuments/code-coverage');
+        $this->coverage->stop();
+        $writer = new  \SebastianBergmann\CodeCoverage\Report\Html\Facade;
+        $writer->process($this->coverage, '../www/application/views/TestDocuments/code-coverage');
 
         $str = '
 <table border="0"  cellpadding="4" cellspacing="1">
@@ -33,15 +36,13 @@ class TestLibrary extends CI_Controller {
                 <td></td>
                 <td></td>
         </tr>
- 
+
         <br>
- 
+
 
 </table>';
         $this->unit->set_template($str);
-        // $this->coverage->stop();
-        // $writer = new  \SebastianBergmann\CodeCoverage\Report\Html\Facade;
-        // $writer->process($this->coverage, '../www/application/views/TestDocuments/code-coverage');
+
 
         file_put_contents('../www/application/views/TestDocuments/test_Library.php', $this->unit->report());
 
@@ -170,10 +171,39 @@ class TestLibrary extends CI_Controller {
 //still bugged
 
     function testGetName(){
+      if(!$this->db->table_exists('bluetape_userinfo')){
+            $fields = array(
+                'email' => array(
+                    'type' => 'VARCHAR',
+                    'constraint' => '128'
+                ),
+                'name' => array(
+                    'type' => 'VARCHAR',
+                    'constraint' => '256'
+                ),
+                'lastUpdate' => array(
+                    'type' => 'DATETIME'
+                ),
+            );
+            $this->dbforge->add_field($fields);
+            $this->dbforge->add_key('email', TRUE);
+            $this->dbforge->create_table('bluetape_userinfo');
+
+      }
+
+
+      $data = array(
+        'email' => '7316081@student.unpar.ac.id',
+        'name' => 'JONATHAN LAKSAMANA PURNOMO',
+        'lastUpdate' => '2019-02-25 09:48:20'
+      );
+      $this->db->insert('bluetape_userinfo',$data);
+
         $this->unit->run(
-            $this->bluetape->getName("7316057@student.unpar.ac.id"),"CHRISSANDI SUTRISNO", __FUNCTION__ , "Untuk mendapatkan nama mahasiswa dari email"
+            $this->bluetape->getName("7316081@student.unpar.ac.id"),"JONATHAN LAKSAMANA PURNOMO", __FUNCTION__ , "Untuk mendapatkan nama mahasiswa dari email"
 
         );
+        $this->db->delete('bluetape_userinfo' , array('email' => '7316081@student.unpar.ac.id'));
     }
 
     function  testSmesterCodeToStringGanjil(){
@@ -221,8 +251,8 @@ class TestLibrary extends CI_Controller {
         );
     }
 
-    
-    
+
+
 
 
 
