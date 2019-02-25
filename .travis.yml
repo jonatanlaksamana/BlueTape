@@ -2,6 +2,8 @@ language: php
 php:
   - '7.2'
 services: mysql
+env:
+  -CODECOV_TOKEN="80f6b414-b912-419d-8fca-07e42b3ef5f5"
 cache: bundler
 
 before_script:
@@ -21,3 +23,6 @@ script:
 - php www/index.php tests TestLibrary
 - php www/index.php tests TestPerubahanKuliah
 - php www/index.php tests TestJadwalDosen
+
+after_success:
+- bash <(curl -s https://codecov.io/bash)
