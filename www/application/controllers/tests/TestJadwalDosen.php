@@ -225,14 +225,14 @@ class TestJadwalDosen extends CI_Controller {
         $newData = array(
             'user'=>'testcase',
         );
-        $this->JadwalDosen_model->updateJadwal($insert_id,$newData);
-        $this->db->where('id', $insert_id);
+        $this->JadwalDosen_model->updateJadwal(0,$newData);
+        $this->db->where('id', 0);
         $this->db->from('jadwal_dosen');
         $query = $this->db->get();
         $row =  $query->row();
         $testCase = $row->user;
         $ex = 'testcase' ;
         $this->unit->run($testCase,$ex,__FUNCTION__);
-         $this->db->delete('jadwal_dosen',array('id'=>$insert_id));
+         $this->db->delete('jadwal_dosen',array('id'=>0));
     }
 }
