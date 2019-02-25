@@ -8,8 +8,8 @@ before_script:
   -  cp www/application/config/database-dev.php www/application/config/database.php
   - mysql -e 'CREATE DATABASE bluetape;'
   - mysql -e 'CREATE USER "travis'@'localhost";'
-  - mysql -e 'GRANT ALL PRIVILEGES ON * . * TO "travis'@'localhost";'
-  
+  - mysql -e GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP ON *.* TO 'dev'@'localhost';
+
   - mysql -e 'FLUSH PRIVILEGES;'
 
 
