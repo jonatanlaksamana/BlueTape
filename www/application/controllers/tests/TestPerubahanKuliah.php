@@ -3,7 +3,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-class TestModel extends CI_Controller {
+class TestPerubahanKuliah extends CI_Controller {
 
 
     public $coverage;
@@ -11,7 +11,7 @@ class TestModel extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->library('unit_test');
-    
+
         $this->coverage = new SebastianBergmann\CodeCoverage\CodeCoverage;
         $this->coverage->filter()->addDirectoryToWhitelist('application/libraries');
         $this->coverage->start('UnitTests');
