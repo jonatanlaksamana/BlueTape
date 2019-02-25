@@ -226,7 +226,7 @@ class TestJadwalDosen extends CI_Controller {
             'user'=>'testcase',
         );
         $this->JadwalDosen_model->updateJadwal($insert_id,$newData);
-        $this->db->where('id', $insert_id);
+        $this->db->where('id', 0);
         $this->db->from('jadwal_dosen');
         $query = $this->db->get();
         $row =  $query->row();
