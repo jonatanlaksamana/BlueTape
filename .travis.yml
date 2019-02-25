@@ -9,11 +9,7 @@ before_script:
   - mysql -e 'CREATE DATABASE bluetape;'
   - mysql -e 'CREATE USER "travis'@'localhost";'
   - mysql -e 'GRANT ALL PRIVILEGES ON * . * TO "travis'@'localhost";'
-  -mysql -e 'create table bluetape_userinfo(
-      email varchar(128),
-      name varchar(256),
-      lastUpdate datetime
-  );'
+  
   - mysql -e 'FLUSH PRIVILEGES;'
 
 
