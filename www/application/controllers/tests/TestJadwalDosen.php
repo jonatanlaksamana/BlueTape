@@ -79,7 +79,7 @@ class TestJadwalDosen extends CI_Controller {
         $this->testCekJadwalByJamMulai();
         //$this->testRequestBy();
         $this->testAddJadwal();
-        // $this->testUpdateJadwal();
+        $this->testUpdateJadwal();
         $this->report();
     }
 
