@@ -10,8 +10,7 @@ before_script:
   - mysql -e 'CREATE USER "travis'@'localhost";'
   - mysql -e 'GRANT ALL PRIVILEGES ON * . * TO "travis'@'localhost";'
   - mysql -e 'FLUSH PRIVILEGES;'
-  - php www/index.php migrate
+
 
 script:
-
   - php www/index.php tests TestLibrary
