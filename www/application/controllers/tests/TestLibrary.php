@@ -171,22 +171,26 @@ class TestLibrary extends CI_Controller {
 //still bugged
 
     function testGetName(){
-      $fields = array(
-          'email' => array(
-              'type' => 'VARCHAR',
-              'constraint' => '128'
-          ),
-          'name' => array(
-              'type' => 'VARCHAR',
-              'constraint' => '256'
-          ),
-          'lastUpdate' => array(
-              'type' => 'DATETIME'
-          ),
-      );
-      $this->dbforge->add_field($fields);
-      $this->dbforge->add_key('email', TRUE);
-      $this->dbforge->create_table('Bluetape_Userinfo');
+      if(!$this->db->table_exists('bluetape_userinfo')){
+            $fields = array(
+                'email' => array(
+                    'type' => 'VARCHAR',
+                    'constraint' => '128'
+                ),
+                'name' => array(
+                    'type' => 'VARCHAR',
+                    'constraint' => '256'
+                ),
+                'lastUpdate' => array(
+                    'type' => 'DATETIME'
+                ),
+            );
+            $this->dbforge->add_field($fields);
+            $this->dbforge->add_key('email', TRUE);
+            $this->dbforge->create_table('bluetape_userinfo');
+
+      }
+
 
       $data = array(
         'email' => '7316081@student.unpar.ac.id',
