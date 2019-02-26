@@ -41,6 +41,44 @@ class TestAll extends CI_Controller
 
     }
 
+    private function report()
+    {
+
+        $this->coverage->stop();
+        $writer = new  \SebastianBergmann\CodeCoverage\Report\Html\Facade;
+        $writer->process($this->coverage, '../TestDocuments/codecoverageAll');
+        file_put_contents('../TestDocuments/TestPlan/TestAll.html', $this->unit->report());
+
+        // Output result to screen
+        $statistics = [
+            'Pass' => 0,
+            'Fail' => 0
+        ];
+        $results = $this->unit->result();
+        foreach ($results as $result) {
+
+
+            foreach ($result as $key => $value) {
+                echo "$key: $value\n";
+            }
+            echo "\n";
+            if ($result['Result'] == 'Passed') {
+                $statistics['Pass']++;
+            } else {
+                $statistics['Fail']++;
+            }
+        }
+        echo "==========\n";
+        foreach ($statistics as $key => $value) {
+            echo "$value test(s) $key\n";
+        }
+
+        if ($statistics['Fail'] > 0) {
+            exit(1);
+        }
+    }
+
+
     /**
      * Run all tests
      */
@@ -77,9 +115,9 @@ class TestAll extends CI_Controller
         $this->testKolomKeHari();
         $this->testHariKeKolom();
         $this->testCekJadwalByJamMulai();
-        //$this->testRequestBy();
+        // $this->testRequestBy();
         $this->testAddJadwal();
-        // $this->testUpdateJadwal();
+        $this->testUpdateJadwal();
         $this->testRequest();
         $this->testRequestByTranskrip();
         $this->testRequestByID();
@@ -415,42 +453,6 @@ class TestAll extends CI_Controller
         $this->db->delete('Transkrip', array('id' => $insert_id));
     }
 
-    private function report()
-    {
-
-        $this->coverage->stop();
-        $writer = new  \SebastianBergmann\CodeCoverage\Report\Html\Facade;
-        $writer->process($this->coverage, '../TestDocuments/codecoverageAll');
-        file_put_contents('../TestDocuments/TestPlan/TestAll.html', $this->unit->report());
-
-        // Output result to screen
-        $statistics = [
-            'Pass' => 0,
-            'Fail' => 0
-        ];
-        $results = $this->unit->result();
-        foreach ($results as $result) {
-
-
-            foreach ($result as $key => $value) {
-                echo "$key: $value\n";
-            }
-            echo "\n";
-            if ($result['Result'] == 'Passed') {
-                $statistics['Pass']++;
-            } else {
-                $statistics['Fail']++;
-            }
-        }
-        echo "==========\n";
-        foreach ($statistics as $key => $value) {
-            echo "$value test(s) $key\n";
-        }
-
-        if ($statistics['Fail'] > 0) {
-            exit(1);
-        }
-    }
 
     //still bugged on travis
 
