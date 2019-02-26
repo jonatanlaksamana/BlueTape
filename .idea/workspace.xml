@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4acb8961-ce72-4f21-99cb-be834c32cfd8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestDocuments/TestPlan/TestAll.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestDocuments/TestPlan/TestAll.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestDocuments/codecoverageAll/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestDocuments/codecoverageAll/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestDocuments/codecoverageAll/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestDocuments/codecoverageAll/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestDocuments/codecoverageAll/libraries/BlueTape.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestDocuments/codecoverageAll/libraries/BlueTape.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestDocuments/codecoverageAll/libraries/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestDocuments/codecoverageAll/libraries/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestDocuments/codecoverageAll/libraries/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestDocuments/codecoverageAll/libraries/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestDocuments/codecoverageAll/models/Auth_model.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestDocuments/codecoverageAll/models/Auth_model.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestDocuments/codecoverageAll/models/Email_model.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestDocuments/codecoverageAll/models/Email_model.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestDocuments/codecoverageAll/models/JadwalDosen_model.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestDocuments/codecoverageAll/models/JadwalDosen_model.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestDocuments/codecoverageAll/models/PerubahanKuliah_model.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestDocuments/codecoverageAll/models/PerubahanKuliah_model.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestDocuments/codecoverageAll/models/Transkrip_model.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestDocuments/codecoverageAll/models/Transkrip_model.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestDocuments/codecoverageAll/models/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestDocuments/codecoverageAll/models/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestDocuments/codecoverageAll/models/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestDocuments/codecoverageAll/models/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/application/controllers/tests/TestAll.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/application/controllers/tests/TestAll.php" afterDir="false" />
-    </list>
+    <list default="true" id="4acb8961-ce72-4f21-99cb-be834c32cfd8" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,8 +39,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/application/controllers/tests/TestAll.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="142">
+              <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
             </state>
           </provider>
         </entry>
@@ -64,7 +48,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/application/models/Auth_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="646">
               <caret line="38" column="41" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="41" />
             </state>
           </provider>
@@ -78,7 +62,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/application/controllers/tests/TestJadwalDosen.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2397">
+            <state relative-caret-position="255">
               <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
             </state>
           </provider>
@@ -96,7 +80,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/application/controllers/tests/TestLibrary.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3791">
+            <state relative-caret-position="4046">
               <caret line="238" selection-start-line="238" selection-end-line="238" />
             </state>
           </provider>
@@ -194,6 +178,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -243,7 +228,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -311,17 +295,18 @@
       <workItem from="1551116634381" duration="274000" />
       <workItem from="1551117360066" duration="1237000" />
       <workItem from="1551153868544" duration="1653000" />
+      <workItem from="1551164780720" duration="703000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43994000" />
+    <option name="totallyTimeSpent" value="44697000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19127516" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19395973" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -504,13 +489,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/application/models/Auth_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="41" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/application/models/Email_model.php">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/application/controllers/tests/TestJadwalDosen.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/application/controllers/tests/TestPerubahanKuliah.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1326">
           <caret line="78" column="103" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/application/controllers/tests/TestLibrary.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4046">
+          <caret line="238" selection-start-line="238" selection-end-line="238" />
         </state>
       </provider>
     </entry>
@@ -521,31 +527,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/application/models/Auth_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="38" column="41" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/application/controllers/tests/TestJadwalDosen.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2397">
-          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/application/controllers/tests/TestLibrary.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3791">
-          <caret line="238" selection-start-line="238" selection-end-line="238" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/application/controllers/tests/TestAll.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="142">
+          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
         </state>
       </provider>
     </entry>
