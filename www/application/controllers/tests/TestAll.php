@@ -24,9 +24,9 @@ class TestAll extends CI_Controller
         $this->load->model('PerubahanKuliah_model');
         $this->load->database();
         $this->load->dbforge();
-        $str = '
+        $str = '    
 <table border="0"  cellpadding="4" cellspacing="1">
-{rows}
+
         <tr>
                 <td></td>
                 <td></td>
@@ -36,6 +36,8 @@ class TestAll extends CI_Controller
 
 
 </table>';
+
+
         $this->unit->set_template($str);
 
 
@@ -96,13 +98,13 @@ class TestAll extends CI_Controller
         $this->testBlueTapeLibraryGetNPM();
         $this->testBlueTapeLibraryGetNPM_2017();
         $this->testBlueTapeLibraryGetNPM_Null();
-        $this->testGetSemester_genap();
-        $this->testGetSemesterSimple_genap();
-        $this->testGetSemesterSimple_ganjil();
+        $this->testGetSemestergenap();
+        $this->testGetSemesterSimplegenap();
+        $this->testGetSemesterSimpleganjil();
         $this->testSmesterCodeToStringGanjil();
         $this->testSmesterCodeToStringGenap();
         $this->testSmesterCodeToStringPadat();
-        $this->testGetSemester_ganjil();
+        $this->testGetSemesterganjil();
         $this->testGetName();
         $this->testGetSemester_pendek();
         $this->testGetEmailBawah();
@@ -155,7 +157,7 @@ class TestAll extends CI_Controller
         );
     }
 
-    function testGetSemester_genap()
+    function testGetSemestergenap()
     {
         $this->unit->run(
             $this->bluetape->yearMonthToSemesterCode("2016", 1), "162", __FUNCTION__, "Untuk mengecek semester genap"
@@ -163,7 +165,7 @@ class TestAll extends CI_Controller
         );
     }
 
-    function testGetSemesterSimple_genap()
+    function testGetSemesterSimplegenap()
     {
         $this->unit->run(
             $this->bluetape->yearMonthToSemesterCodeSimplified("2016", 1), "162", __FUNCTION__, "Untuk mengkonversi tahun dan bulan sekarang menjadi code smester sederhana (genap)"
@@ -171,7 +173,7 @@ class TestAll extends CI_Controller
         );
     }
 
-    function testGetSemesterSimple_ganjil()
+    function testGetSemesterSimpleganjil()
     {
         $this->unit->run(
             $this->bluetape->yearMonthToSemesterCodeSimplified("2016", 8), "161", __FUNCTION__, "Untuk mengkonversi tahun dan bulan sekarang menjadi code smester sederhana (ganjil)"
@@ -205,7 +207,7 @@ class TestAll extends CI_Controller
 
 //still bugged
 
-    function testGetSemester_ganjil()
+    function testGetSemesterganjil()
     {
         $this->unit->run(
             $this->bluetape->yearMonthToSemesterCode("2016", 9), "161", __FUNCTION__, "Untuk mengecek semester ganjil"
