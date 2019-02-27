@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4acb8961-ce72-4f21-99cb-be834c32cfd8" name="Default Changelist" comment="" />
+    <list default="true" id="4acb8961-ce72-4f21-99cb-be834c32cfd8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestDocuments/codecoverageAll/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestDocuments/codecoverageAll/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestDocuments/codecoverageAll/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestDocuments/codecoverageAll/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestDocuments/codecoverageAll/libraries/BlueTape.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestDocuments/codecoverageAll/libraries/BlueTape.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestDocuments/codecoverageAll/libraries/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestDocuments/codecoverageAll/libraries/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestDocuments/codecoverageAll/libraries/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestDocuments/codecoverageAll/libraries/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestDocuments/codecoverageAll/models/Auth_model.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestDocuments/codecoverageAll/models/Auth_model.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestDocuments/codecoverageAll/models/Email_model.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestDocuments/codecoverageAll/models/Email_model.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestDocuments/codecoverageAll/models/JadwalDosen_model.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestDocuments/codecoverageAll/models/JadwalDosen_model.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestDocuments/codecoverageAll/models/PerubahanKuliah_model.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestDocuments/codecoverageAll/models/PerubahanKuliah_model.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestDocuments/codecoverageAll/models/Transkrip_model.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestDocuments/codecoverageAll/models/Transkrip_model.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestDocuments/codecoverageAll/models/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestDocuments/codecoverageAll/models/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestDocuments/codecoverageAll/models/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestDocuments/codecoverageAll/models/index.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +53,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/application/controllers/tests/TestAll.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+            <state relative-caret-position="17">
+              <caret line="65" selection-start-line="65" selection-end-line="65" />
             </state>
           </provider>
         </entry>
@@ -178,7 +192,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -186,53 +199,16 @@
               <item name="BlueTape" type="b2602c69:ProjectViewProjectNode" />
               <item name="BlueTape" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="BlueTape" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlueTape" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlueTape" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlueTape" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlueTape" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlueTape" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlueTape" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlueTape" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlueTape" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlueTape" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlueTape" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlueTape" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/tolongin" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -295,18 +271,19 @@
       <workItem from="1551116634381" duration="274000" />
       <workItem from="1551117360066" duration="1237000" />
       <workItem from="1551153868544" duration="1653000" />
-      <workItem from="1551164780720" duration="703000" />
+      <workItem from="1551164780720" duration="2006000" />
+      <workItem from="1551240846080" duration="617000" />
+      <workItem from="1551266523494" duration="53000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44697000" />
+    <option name="totallyTimeSpent" value="46670000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19395973" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19932885" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -529,8 +506,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/application/controllers/tests/TestAll.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+        <state relative-caret-position="17">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
         </state>
       </provider>
     </entry>

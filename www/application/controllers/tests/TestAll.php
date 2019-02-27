@@ -9,6 +9,9 @@ class TestAll extends CI_Controller
 
     public $coverage;
 
+
+
+
     public function __construct()
     {
         parent::__construct();
@@ -17,6 +20,8 @@ class TestAll extends CI_Controller
         $this->coverage->filter()->addDirectoryToWhitelist('application/libraries');
         $this->coverage->filter()->addDirectoryToWhitelist('application/models');
         $this->coverage->start('UnitTests');
+
+
         $this->load->model('JadwalDosen_model');
         $this->load->library('BlueTape');
         $this->load->config('auth');
@@ -118,6 +123,8 @@ class TestAll extends CI_Controller
 
     public function testAll()
     {
+
+
 
         $this->testBlueTapeLibraryGetNPM();
         $this->testBlueTapeLibraryGetNPM_2017();
