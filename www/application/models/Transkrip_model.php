@@ -78,4 +78,6 @@ class Transkrip_model extends CI_Model {
         }
         return $forbiddenTypes;
     }
+
+  
 }
