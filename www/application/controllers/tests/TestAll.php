@@ -295,7 +295,7 @@ class TestAll extends CI_Controller
         $requests = $query->result(); //ubah kedalam array
         
         $testCase = $this->Transkrip_model->requestTypesForbidden($requests);
-        var_dump($testCase);
+        
         $ex = "Anda tidak bisa meminta cetak karena seluruh jenis transkrip sudah pernah dikabulkan di semester ini (Genap 2018/2019).";
         $this->unit->run($testCase, $ex, __FUNCTION__);
         $this->db->delete('Transkrip', array('requestByEmail' => 'dummyemail'));
