@@ -209,26 +209,8 @@ class TestJadwalDosen extends CI_Controller
 
     public function testUpdateJadwal()
     {
-        $user = 'jaki';
-        $hari = 1;
-        $jam_mulai = 1;
-        $durasi = 1;
-        $jenis = 'responsi';
-        $label = 'entahlah';
-        $lastUpdate = '2019-02-25 09:48:20';
 
-        $data = array(
-            'user' => $user,
-            'hari' => $hari,
-            'jam_mulai' => $jam_mulai,
-            'durasi' => $durasi,
-            'jenis_jadwal' => $jenis,
-            'label_jadwal' => $label,
-            'lastupdate' => $lastUpdate
-        );
-
-        $this->JadwalDosen_model->addJadwal($data);
-        $insert_id = $this->db->insert_id();
+        $insert_id = 1;
         $newData = array(
             'user' => 'testcase',
         );
@@ -240,30 +222,13 @@ class TestJadwalDosen extends CI_Controller
         $testCase = $row->user;
         $ex = 'testcase';
         $this->unit->run($testCase, $ex, __FUNCTION__,"hasil tes method untuk update jadwal");
-        $this->db->delete('jadwal_dosen', array('id' => $insert_id));
+    
     }
 
     public function testDeleteJadwal()
     {
-        $user = 'jaki';
-        $hari = 1;
-        $jam_mulai = 1;
-        $durasi = 1;
-        $jenis = 'responsi';
-        $label = 'entahlah';
-        $lastUpdate = '2019-02-25 09:48:20';
 
-        $data = array(
-            'user' => $user,
-            'hari' => $hari,
-            'jam_mulai' => $jam_mulai,
-            'durasi' => $durasi,
-            'jenis_jadwal' => $jenis,
-            'label_jadwal' => $label,
-            'lastupdate' => $lastUpdate
-        );
-        $this->JadwalDosen_model->addJadwal($data);
-        $this->JadwalDosen_model->deleteByUsername('jaki');
+        $this->JadwalDosen_model->deleteByUsername('jakii');
         $testCase = $this->db->affected_rows();
         $ex = 1;
 
@@ -273,25 +238,8 @@ class TestJadwalDosen extends CI_Controller
 
     public function testDeleteByUsername()
     {
-        $user = 'jaki';
-        $hari = 1;
-        $jam_mulai = 1;
-        $durasi = 1;
-        $jenis = 'responsi';
-        $label = 'entahlah';
-        $lastUpdate = '2019-02-25 09:48:20';
 
-        $data = array(
-            'user' => $user,
-            'hari' => $hari,
-            'jam_mulai' => $jam_mulai,
-            'durasi' => $durasi,
-            'jenis_jadwal' => $jenis,
-            'label_jadwal' => $label,
-            'lastupdate' => $lastUpdate
-        );
-        $this->JadwalDosen_model->addJadwal($data);
-        $insert_id = $this->db->insert_id();
+        $insert_id = 1;
 
         $this->JadwalDosen_model->deleteJadwal($insert_id);
         $testCase = $this->db->affected_rows();
