@@ -211,7 +211,7 @@ class TestJadwalDosen extends CI_Controller
     {
 
        // $target = $this->db->limit(1);
-        $insert_id = $target->id;
+        $insert_id = 1;
         $newData = array(
             'user' => 'testcase',
         );
