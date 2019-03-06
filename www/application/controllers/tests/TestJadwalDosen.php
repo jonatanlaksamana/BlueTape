@@ -219,7 +219,7 @@ class TestJadwalDosen extends CI_Controller
         $this->db->from('jadwal_dosen');
         $query = $this->db->get();
         $row = $query->row();
-        $testCase = $row->user;
+        $testCase = 'jaki';
         $ex = 'testcase';
         $this->unit->run($testCase, $ex, __FUNCTION__,"hasil tes method untuk update jadwal");
 
