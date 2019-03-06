@@ -48,8 +48,8 @@ class TestEmail extends CI_Controller{
   }
 
   public function index(){
-      //$this->testSendEmail_notsend();
-      $this->testSendEmail_DebugTrue();
+      $this->testSendEmail_notsend();
+//      $this->testSendEmail_DebugTrue();
       $this->report();
 
   }
