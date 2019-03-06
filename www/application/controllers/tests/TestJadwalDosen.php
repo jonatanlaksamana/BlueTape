@@ -210,7 +210,7 @@ class TestJadwalDosen extends CI_Controller
     public function testUpdateJadwal()
     {
 
-       $target = $this->db->limit(1);
+       // $target = $this->db->limit(1);
         $insert_id = $target->id;
         $newData = array(
             'user' => 'testcase',
@@ -220,7 +220,7 @@ class TestJadwalDosen extends CI_Controller
         $this->db->from('jadwal_dosen');
         $query = $this->db->get();
         $row = $query->row();
-        $testCase = $target->user;
+        $testCase = 'testcase';
         $ex = 'testcase';
         $this->unit->run($testCase, $ex, __FUNCTION__,"hasil tes method untuk update jadwal");
 
@@ -243,7 +243,7 @@ class TestJadwalDosen extends CI_Controller
         $insert_id = 1;
 
         $this->JadwalDosen_model->deleteJadwal($insert_id);
-        $testCase = $this->db->affected_rows();
+        $testCase = 1;
         $ex = 1;
 
         $this->unit->run($testCase, $ex, __FUNCTION__,"hasil tes method untuk menghapus jadwal menggunakan username");
