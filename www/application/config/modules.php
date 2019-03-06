@@ -21,6 +21,9 @@ $config['modules'] = array(
 	'LihatJadwalDosen' => array('root', 'mahasiswa.informatika', 'dosen.informatika')
 );
 
+
+//ganti
+
 $config['roles'] = array(
     'root' => array('pascal@unpar.ac.id', 'shao.wei@unpar.ac.id'),
     'tu.ftis' => array('shao.wei@unpar.ac.id', 'pranyoto@unpar.ac.id', 'walip@unpar.ac.id', 'dwina@unpar.ac.id'),

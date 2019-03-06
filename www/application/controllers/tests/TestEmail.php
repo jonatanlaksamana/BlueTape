@@ -80,10 +80,7 @@ class TestEmail extends CI_Controller{
       catch(Exception $e){
           $e->getMessage();
       }
-      
-      //$ex = 'message';
-    // $toString = (string) $testcase;
-   // $ex =  $this->expectOutputString('what');
+
     $this->unit->run($testcase,'what' ,__FUNCTION__,'test email when it not send');
   
      
