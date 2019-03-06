@@ -222,9 +222,10 @@ class TestJadwalDosen extends CI_Controller
         $testCase = $row->user;
         $ex = 'testcase';
         $this->unit->run($testCase, $ex, __FUNCTION__,"hasil tes method untuk update jadwal");
-    
+
     }
 
+// pass on travis
     public function testDeleteJadwal()
     {
 
