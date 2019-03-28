@@ -232,7 +232,7 @@ class TestJadwalDosen extends CI_Controller
 
         $this->JadwalDosen_model->deleteByUsername('jakii');
         $testCase = $this->db->affected_rows();
-        $ex = 1;
+        $ex = 0;
          $this->unit->run($testCase, $ex, __FUNCTION__,"hasil tes method untuk menghapus jadwal ");
 
     }
