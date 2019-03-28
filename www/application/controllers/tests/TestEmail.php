@@ -49,7 +49,7 @@ class TestEmail extends CI_Controller{
 
   public function index(){
       $this->testSendEmail_notsend();
-//      $this->testSendEmail_DebugTrue();
+      $this->testSendEmail_DebugTrue();
       $this->report();
 
   }
@@ -73,17 +73,18 @@ class TestEmail extends CI_Controller{
   public function testSendEmail_DebugTrue(){
       try{
           
-          $testcase = $this->emailmod->send_email('7316081@student.unpar.ac.id' , 'head' , 'what',true);
-          echo "wo";
+          $testcase = $this->emailmod->send_email('7316081@student.unpar.ac.id' , 'head' , 'message',true);
 
       }
       catch(Exception $e){
           $e->getMessage();
       }
 
-    $this->unit->run($testcase,'what' ,__FUNCTION__,'test email when it not send');
+    $this->unit->run($testcase,'message' ,__FUNCTION__,'test email when it not send');
   
      
   }
+
+  
 
 }
