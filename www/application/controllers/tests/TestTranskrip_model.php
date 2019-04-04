@@ -41,12 +41,6 @@ class TestTranskrip_model extends CI_Controller
 
     function testRequestBy()
     {
-        $this->db->insert('Transkrip', array(
-            'requestByEmail' => 'dummyemail',
-            'requestDateTime' => strftime('%Y-%m-%d %H:%M:%S'),
-            'requestType' => 'dummytype',
-            'requestUsage' => 'tes'
-        ));
         $this->db->where('requestByEmail', 'dummyemail');
         $this->db->from('Transkrip');
         $this->db->order_by('requestDateTime', 'DESC');
@@ -55,19 +49,11 @@ class TestTranskrip_model extends CI_Controller
         $testCase = $this->Transkrip_model->requestsBy('dummyemail', null, null);
         $excpeted_result = $query->result();
         $this->unit->run($testCase, $excpeted_result, __FUNCTION__);
-        $this->db->delete('Transkrip', array('requestByEmail' => 'dummyemail'));
     }
 
     function testRequestByID()
     {
-        $this->db->insert('Transkrip', array(
-
-            'requestByEmail' => 'dummyemail',
-            'requestDateTime' => strftime('%Y-%m-%d %H:%M:%S'),
-            'requestType' => 'dummytype',
-            'requestUsage' => 'tes'
-        ));
-        $insert_id = $this->db->insert_id();
+        $insert_id = 0;
         $this->db->where('id', $insert_id);
         $this->db->from('Transkrip');
         $this->db->order_by('requestDateTime', 'DESC');
@@ -76,16 +62,9 @@ class TestTranskrip_model extends CI_Controller
         $testCase = $this->Transkrip_model->requestByID($insert_id, null, null);
         $excpeted_result = $query->result()[0];
         $this->unit->run($testCase, $excpeted_result, __FUNCTION__);
-        $this->db->delete('Transkrip', array('id' => $insert_id));
     }
     function testLimitRequestBy()
     {
-        $this->db->insert('Transkrip', array(
-            'requestByEmail' => 'dummyemail',
-            'requestDateTime' => strftime('%Y-%m-%d %H:%M:%S'),
-            'requestType' => 'dummytype',
-            'requestUsage' => 'tes'
-        ));
         $this->db->where('requestByEmail', 'dummyemail');
         $this->db->limit(1, 0);
         $this->db->from('Transkrip');
@@ -95,18 +74,10 @@ class TestTranskrip_model extends CI_Controller
         $testCase = $this->Transkrip_model->requestsBy('dummyemail', 1, 0);
         $excpeted_result = $query->result();
         $this->unit->run($testCase, $excpeted_result, __FUNCTION__);
-        $this->db->delete('Transkrip', array('requestByEmail' => 'dummyemail'));
     }
     function testLimitRequestByID()
     {
-        $this->db->insert('Transkrip', array(
-
-            'requestByEmail' => 'dummyemail',
-            'requestDateTime' => strftime('%Y-%m-%d %H:%M:%S'),
-            'requestType' => 'dummytype',
-            'requestUsage' => 'tes'
-        ));
-        $insert_id = $this->db->insert_id();
+        $insert_id = 0;
         $this->db->where('id', $insert_id);
         $this->db->limit(1, 0);
         $this->db->from('Transkrip');
@@ -116,18 +87,10 @@ class TestTranskrip_model extends CI_Controller
         $testCase = $this->Transkrip_model->requestByID($insert_id, 1, 0);
         $excpeted_result = $query->result()[0];
         $this->unit->run($testCase, $excpeted_result, __FUNCTION__);
-        $this->db->delete('Transkrip', array('id' => $insert_id));
     }
     function requestTypesForbidden1()
     {
-        $this->db->insert('Transkrip', array(
-
-            'requestByEmail' => 'dummyemail',
-            'requestDateTime' => strftime('%Y-%m-%d %H:%M:%S'),
-            'requestType' => 'dummytype',
-            'requestUsage' => 'tes'
-        ));
-        $insert_id = $this->db->insert_id();
+        $insert_id = 0;
         $this->db->where('id', $insert_id);
         $this->db->from('Transkrip');
         $this->db->order_by('requestDateTime', 'DESC');
@@ -137,21 +100,10 @@ class TestTranskrip_model extends CI_Controller
         $testCase = $this->Transkrip_model->requestTypesForbidden($requests);
         $ex = "Anda tidak bisa meminta cetak karena ada permintaan lain yang belum selesai.";
         $this->unit->run($testCase, $ex, __FUNCTION__);
-        $this->db->delete('Transkrip', array('id' => $insert_id));
     }
     function requestTypesForbidden2()
     {
-        $this->db->insert('Transkrip', array(
-
-            'requestByEmail' => 'dummyemail',
-            'requestDateTime' => strftime('%Y-%m-%d %H:%M:%S'),
-            'requestType' => 'type1',
-            'requestUsage' => 'tes', 
-            'answer' => 'printed'
-        ));
-       
-    
-        $insert_id = $this->db->insert_id();
+        $insert_id = 0;
         $this->db->where('id', $insert_id);
         $this->db->from('Transkrip');
         $this->db->order_by('requestDateTime', 'DESC');
@@ -161,34 +113,10 @@ class TestTranskrip_model extends CI_Controller
         $testCase = $this->Transkrip_model->requestTypesForbidden($requests);
          $ex =  ['type1'];
         $this->unit->run($testCase, $ex, __FUNCTION__);
-        $this->db->delete('Transkrip', array('id' => $insert_id));
     }
     function requestTypesForbidden3()
     {
-        $this->db->insert('Transkrip', array(
-
-            'requestByEmail' => 'dummyemail',
-            'requestDateTime' => strftime('%Y-%m-%d %H:%M:%S'),
-            'requestType' => 'type2=1',
-            'requestUsage' => 'tes', 
-            'answer' => 'printed'
-        ));
-        $this->db->insert('Transkrip', array(
-
-            'requestByEmail' => 'dummyemail',
-            'requestDateTime' => strftime('%Y-%m-%d %H:%M:%S'),
-            'requestType' => 'type2',
-            'requestUsage' => 'tes', 
-            'answer' => 'printed'
-        ));
-        $this->db->insert('Transkrip', array(
-
-            'requestByEmail' => 'dummyemail',
-            'requestDateTime' => strftime('%Y-%m-%d %H:%M:%S'),
-            'requestType' => 'type3',
-            'requestUsage' => 'tes', 
-            'answer' => 'printed'
-        ));
+        
         $this->db->where('requestByEmail', 'dummyemail');
         $this->db->from('Transkrip');
         $this->db->order_by('requestDateTime', 'DESC');
@@ -199,7 +127,7 @@ class TestTranskrip_model extends CI_Controller
         
         $ex = "Anda tidak bisa meminta cetak karena seluruh jenis transkrip sudah pernah dikabulkan di semester ini (Genap 2018/2019).";
         $this->unit->run($testCase, $ex, __FUNCTION__);
-        $this->db->delete('Transkrip', array('requestByEmail' => 'dummyemail'));
+       
     }
     private function report()
     {
