@@ -230,7 +230,7 @@ class TestJadwalDosen extends CI_Controller
     public function testDeleteJadwal()
     {
 
-        $this->JadwalDosen_model->deleteByUsername('jakii');
+        $this->JadwalDosen_model->deleteByUsername('testcase');
         $testCase = $this->db->affected_rows();
         $ex = 0;
          $this->unit->run($testCase, $ex, __FUNCTION__,"hasil tes method untuk menghapus jadwal ");
