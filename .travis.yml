@@ -16,10 +16,10 @@ before_script:
   - mysql -e "USE bluetape; insert into Bluetape_Userinfo values ('7316081@student.unpar.ac.id' , 'JONATHAN LAKSAMANA PURNOMO' , '2019-02-25 09:48:20');"
   - mysql -e "USE bluetape; insert into jadwal_dosen values('','jaki',1,1,1,'a','a','2019-02-25 09:48:20');"
   - mysql -e "USE bluetape; insert into jadwal_dosen values('','jakii',1,1,1,'a','a','2019-02-25 09:48:20');"
-  - mysql -e "use bluetape; insert into Transkrip values('','dummyemail','2019-02-25 09:48:20','dummytype','tes',null,null,null,null)"
-  - mysql -e "use bluetape; insert into Transkrip values('','dummyemail','20120618 10:34:09 ','type1','tes','printed',null,null,null)"
-   - mysql -e "use bluetape; insert into Transkrip values('','dummyemail','20120618 10:34:09 ','type2','tes','printed',null,null,null)"
-    - mysql -e "use bluetape; insert into Transkrip values('','dummyemail','20120618 10:34:09 ','type3','tes','printed',null,null,null)"
+  - mysql -e "use bluetape; insert into Transkrip values('','dummyemail','2019-02-25 09:48:20','dummytype','tes',null,null,null,null);"
+  - mysql -e "use bluetape; insert into Transkrip values('','dummyemail','20120618 10:34:09 ','type1','tes','printed',null,null,null);"
+   - mysql -e "use bluetape; insert into Transkrip values('','dummyemail','20120618 10:34:09 ','type2','tes','printed',null,null,null);"
+    - mysql -e "use bluetape; insert into Transkrip values('','dummyemail','20120618 10:34:09 ','type3','tes','printed',null,null,null);"
 
 
 
