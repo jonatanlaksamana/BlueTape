@@ -5,7 +5,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class TestEmail extends CI_Controller{
   public function __construct(){
     parent::__construct();
-      $this->load->library('email');
+    $this->load->config('auth');
+    $config = $this->config->item('email-config');
+      $this->load->library('email',$config);
     $this->load->model('Email_model' , 'emailmod');
       $this->load->library('unit_test');
   }
@@ -47,7 +49,7 @@ class TestEmail extends CI_Controller{
 
   public function index(){
       $this->testSendEmail_notsend();
-//      $this->testSendEmail_DebugTrue();
+      $this->testSendEmail_DebugTrue();
       $this->report();
 
   }
@@ -70,6 +72,7 @@ class TestEmail extends CI_Controller{
 
   public function testSendEmail_DebugTrue(){
       try{
+          
           $testcase = $this->emailmod->send_email('7316081@student.unpar.ac.id' , 'head' , 'message',true);
 
       }
@@ -77,9 +80,11 @@ class TestEmail extends CI_Controller{
           $e->getMessage();
       }
 
-      $ex = 'message';
-     $toString = (string) $testcase;
-      $this->unit->run('test','test' ,__FUNCTION__,'test email when it not send');
+    $this->unit->run($testcase,'message' ,__FUNCTION__,'test email when it not send');
+  
+     
   }
+
+  
 
 }

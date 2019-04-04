@@ -6,6 +6,7 @@
         "friendsofphp/php-cs-fixer": "^2.14"
     },
     "require-dev": {
-          "codacy/coverage": "dev-master"
+          "codacy/coverage": "dev-master",
+        "phpunit/phpunit": "^8"
       }
 }
