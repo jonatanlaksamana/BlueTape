@@ -31,13 +31,13 @@ class TestTranskrip_model extends CI_Controller
 
     public function testAll()
     {
-        // $this->testRequestBy();
-        // $this->testRequestByID();
-        // $this->testLimitRequestBy();
-        // $this->testLimitRequestByID();
-        // $this->requestTypesForbidden1();
+        $this->testRequestBy();
+        $this->testRequestByID();
+        $this->testLimitRequestBy();
+        $this->testLimitRequestByID();
+        $this->requestTypesForbidden1();
         $this->requestTypesForbidden2();
-        // $this->requestTypesForbidden3();
+        $this->requestTypesForbidden3();
     }
 
     function testRequestBy()
@@ -113,9 +113,9 @@ class TestTranskrip_model extends CI_Controller
         $requests = $query->result(); //ubah kedalam array
 
         $testCase = $this->Transkrip_model->requestTypesForbidden($requests);
-         $ex =  ['type1'];
-         var_dump($testCase);
-        // $this->unit->run($testCase, $ex, __FUNCTION__);
+         $ex =  "Anda tidak bisa meminta cetak karena seluruh jenis transkrip sudah pernah dikabulkan di semester ini (Genap 2018/2019).";
+        //  var_dump($testCase);
+        $this->unit->run($testCase, $ex, __FUNCTION__);
     }
     function requestTypesForbidden3()
     {
