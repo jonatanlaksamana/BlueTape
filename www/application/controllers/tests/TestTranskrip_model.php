@@ -35,8 +35,8 @@ class TestTranskrip_model extends CI_Controller
         // $this->testRequestByID();
         // $this->testLimitRequestBy();
         // $this->testLimitRequestByID();
-        $this->requestTypesForbidden1();
-        // $this->requestTypesForbidden2();
+        // $this->requestTypesForbidden1();
+        $this->requestTypesForbidden2();
         // $this->requestTypesForbidden3();
     }
 
@@ -99,9 +99,9 @@ class TestTranskrip_model extends CI_Controller
         $requests = $query->result(); //ubah kedalam array
 
         $testCase = $this->Transkrip_model->requestTypesForbidden($requests);
-        $ex = "Anda tidak bisa meminta cetak karena ada permintaan lain yang belum selesai.";
-        var_dump($testCase);
-        // $this->unit->run($testCase, $ex, __FUNCTION__);
+        $ex = "Anda tidak bisa meminta cetak karena seluruh jenis transkrip sudah pernah dikabulkan di semester ini (Genap 2018/2019).";
+        // var_dump($testCase);
+        $this->unit->run($testCase, $ex, __FUNCTION__);
     }
     function requestTypesForbidden2()
     {
@@ -114,7 +114,8 @@ class TestTranskrip_model extends CI_Controller
 
         $testCase = $this->Transkrip_model->requestTypesForbidden($requests);
          $ex =  ['type1'];
-        $this->unit->run($testCase, $ex, __FUNCTION__);
+         var_dump($testCase);
+        // $this->unit->run($testCase, $ex, __FUNCTION__);
     }
     function requestTypesForbidden3()
     {
