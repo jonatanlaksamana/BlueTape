@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <p class="text-center">
                     <img src="/public/img/logo.png" alt="Logo BlueTape"/><br/><br/>
                     Silahkan   login di aplikasi BlueTape, dengan menekan tombol di bawah ini. Gunakan akun
-                    <b>@unpar.ac.id</b> atau <b>@student.unpar.ac.id lalalala</b>.<br/><br/>
+                    <b>@unpar.ac.id</b> atau <b>@student.unpar.ac.id </b>.<br/><br/>
 
                     <a href="<?= $authURL; ?>" class="button expand">Login dengan Google</a><br/><br/>
                     <a class="text-center" href="https://github.com/ftisunpar/BlueTape/wiki/UserGuide" target="_blank">Petunjuk Penggunaan</a>

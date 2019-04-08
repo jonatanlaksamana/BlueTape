@@ -48,13 +48,16 @@ class TestEmail extends CI_Controller{
   }
 
   public function index(){
+        $this->testSendEmail_fail();
       $this->testSendEmail();
       $this->testSendEmail_DebugTrue();
+  
       $this->report();
 
   }
   public function testSendEmail(){
 
+      copy('../../config/auth-backup.php','../../config/auth.php');
       try{
           $testcase = $this->emailmod->send_email('7316081@student.unpar.ac.id' , 'test' , 'this test is from bluetape');
           $temp = "masuk pak eko";
@@ -65,14 +68,34 @@ class TestEmail extends CI_Controller{
 
       }
       $ex = null;
-      $this->unit->run($testcase,$ex ,__FUNCTION__,'test email when it not send');
+      $this->unit->run($testcase,$ex ,__FUNCTION__,'test email when it send');
 
 
   }
+  public function testSendEmail_fail(){
+ 
+    copy('../../config/auth-dev.php','../../config/auth.php');
+// 
+    try{
+        $testcase = $this->emailmod->send_email('7316081student.unpar.ac.id' , 'test' , 'this test is from bluetape',false,true);
+        $temp = "masuk pak eko";
+    
+    }
+    catch(Exception $e){
+        $temp = (string) $e->getMessage();
+
+    }
+    $ex = "Maaf, gagal mengirim email notifikasi.";
+    $this->unit->run($temp,$ex ,__FUNCTION__,'test email when it not send');
+
+
+}
+
 
 
 
   public function testSendEmail_DebugTrue(){
+
       try{
           
           $testcase = $this->emailmod->send_email('7316081@student.unpar.ac.id' , 'head' , 'message',true);
@@ -86,7 +109,4 @@ class TestEmail extends CI_Controller{
   
      
   }
-
-  
-
 }
