@@ -55,7 +55,7 @@ class Transkrip_model extends CI_Model {
      * diperbolehkan.
      */
     public function requestTypesForbidden($requests) {
-        $this->load->library('bluetape');
+        $this->load->library('BlueTape');
         $date = getdate();
         $currentYear = $date['year'];
         $currentMonth = $date['mon'];

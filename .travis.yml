@@ -1,8 +1,7 @@
 language: php
 php:
-  - '7.2'
+  - "7.2"
 services: mysql
-cache: bundler
 
 before_script:
   - cp www/application/config/auth-dev.php www/application/config/auth.php
@@ -21,11 +20,9 @@ before_script:
   - mysql -e "USE bluetape; insert into Transkrip values('','dummyemail','2019-02-25 09:48:20','type2','tes','printed');"
   - mysql -e "USE bluetape; insert into Transkrip values('','dummyemail','2019-02-25 09:48:20','type3','tes','printed');"
 
-
-
 script:
-- php www/index.php tests TestLibrary
-- php www/index.php tests TestPerubahanKuliah
-- php www/index.php tests TestJadwalDosen
-- php www/index.php tests TestAuth
-# - php www/index.php tests TestTranskrip_model
+  - php www/index.php tests TestLibrary
+  - php www/index.php tests TestPerubahanKuliah
+  - php www/index.php tests TestJadwalDosen
+  - php www/index.php tests TestAuth
+  - php www/index.php tests TestTranskrip_model

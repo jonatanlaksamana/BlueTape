@@ -15,6 +15,7 @@ class TestTranskrip_model extends CI_Controller
         $this->load->library('unit_test');
         $this->load->database();
         $this->load->model('Transkrip_model');
+        $this->load->library('BlueTape');
     }
 
     /**
@@ -98,7 +99,8 @@ class TestTranskrip_model extends CI_Controller
         $requests = $query->result(); //ubah kedalam array
 
         $testCase = $this->Transkrip_model->requestTypesForbidden($requests);
-        $ex = "Anda tidak bisa meminta cetak karena ada permintaan lain yang belum selesai.";
+        $ex = "Anda tidak bisa meminta cetak karena seluruh jenis transkrip sudah pernah dikabulkan di semester ini (Genap 2018/2019).";
+        // var_dump($testCase);
         $this->unit->run($testCase, $ex, __FUNCTION__);
     }
     function requestTypesForbidden2()
@@ -111,7 +113,8 @@ class TestTranskrip_model extends CI_Controller
         $requests = $query->result(); //ubah kedalam array
 
         $testCase = $this->Transkrip_model->requestTypesForbidden($requests);
-         $ex =  ['type1'];
+         $ex =  "Anda tidak bisa meminta cetak karena seluruh jenis transkrip sudah pernah dikabulkan di semester ini (Genap 2018/2019).";
+        //  var_dump($testCase);
         $this->unit->run($testCase, $ex, __FUNCTION__);
     }
     function requestTypesForbidden3()
