@@ -26,3 +26,4 @@ script:
   - php www/index.php tests TestJadwalDosen
   - php www/index.php tests TestAuth
   - php www/index.php tests TestTranskrip_model
+  - php www/index.php tests TestEmail

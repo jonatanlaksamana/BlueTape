@@ -20,8 +20,6 @@ class TestAll extends CI_Controller
         $this->coverage->filter()->addDirectoryToWhitelist('application/libraries');
         $this->coverage->filter()->addDirectoryToWhitelist('application/models');
         $this->coverage->start('UnitTests');
-
-
         $this->load->model('JadwalDosen_model');
         $this->load->library('BlueTape');
         $this->load->config('auth');
@@ -30,6 +28,11 @@ class TestAll extends CI_Controller
         $this->load->model('Auth_model', 'Auth');
         $this->load->database();
         $this->load->dbforge();
+        $this->load->config('auth');
+        $config = $this->config->item('email-config');
+        $this->load->library('email',$config);
+        $this->load->model('Email_model' , 'emailmod');
+         $this->load->library('unit_test');
         $this->load->library('session') ;
         $this->client = new Google_Client();
         $this->client->setClientId($this->config->item('755661919348-3b2u44e804efh2mghpadttnqh3u4ujd9.apps.googleusercontent.com'));
@@ -151,7 +154,6 @@ class TestAll extends CI_Controller
         $this->testKolomKeHari();
         $this->testHariKeKolom();
         $this->testCekJadwalByJamMulai();
-        // $this->testRequestBy();
         $this->testAddJadwal();
         $this->testUpdateJadwal();
         $this->testRequest();
@@ -161,21 +163,54 @@ class TestAll extends CI_Controller
         $this->testGetUserInfo() ;
         $this-> testLogout() ;
         $this->testRequest_withlimit();
-
         $this->testLimitRequestBy();
         $this->testLimitRequestByID();
         $this->requestTypesForbidden1();
         $this->requestTypesForbidden2();
         $this->requestTypesForbidden3();
-
         $this->testDeleteJadwal();
         $this->testDeleteByUsername();
+        $this->testSendEmail();
+        $this->testSendEmail_DebugTrue();
 
 
 
 
 
 
+    }
+
+    public function testSendEmail(){
+        try{
+            $testcase = $this->emailmod->send_email('7316081@student.unpar.ac.id' , 'test' , 'this test is from bluetape');
+            $temp = "masuk pak eko";
+        
+        }
+        catch(Exception $e){
+            $temp = (string) $e->getMessage();
+  
+        }
+        $ex =  null;
+        $this->unit->run($testcase,$ex ,__FUNCTION__,'test email when it sended');
+  
+  
+    }
+  
+  
+  
+    public function testSendEmail_DebugTrue(){
+        try{
+            
+            $testcase = $this->emailmod->send_email('7316081@student.unpar.ac.id' , 'head' , 'message',true);
+  
+        }
+        catch(Exception $e){
+            $e->getMessage();
+        }
+  
+      $this->unit->run($testcase,'message' ,__FUNCTION__,'test email when it not send');
+    
+       
     }
     function testLimitRequestBy()
     {
