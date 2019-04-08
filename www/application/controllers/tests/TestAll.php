@@ -770,17 +770,7 @@ class TestAll extends CI_Controller
         );
     }
 
-    public function testRequestBy()
-    {
-
-        $this->db->where('requestByEmail', 'fikrizzaki');
-        $this->db->from('jadwal_dosen');
-        $this->db->order_by('requestDateTime', 'DESC');
-        $query = $this->db->get();
-        $ex = $query->result();
-        $testCase = $this->JadwalDosen_model->requestBy('fikrizzaki', null, null);
-        $this->unit->run($testCase, $ex, __FUNCTION__);
-    }
+  
 
     public function kolomKeHari($namaHari)
     {
