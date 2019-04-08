@@ -21,8 +21,8 @@ before_script:
   - mysql -e "USE bluetape; insert into Transkrip values('','dummyemail','2019-02-25 09:48:20','type3','tes','printed');"
 
 script:
-  # - php www/index.php tests TestLibrary
-  # - php www/index.php tests TestPerubahanKuliah
-  # - php www/index.php tests TestJadwalDosen
-  # - php www/index.php tests TestAuth
+  - php www/index.php tests TestLibrary
+  - php www/index.php tests TestPerubahanKuliah
+  - php www/index.php tests TestJadwalDosen
+  - php www/index.php tests TestAuth
   - php www/index.php tests TestTranskrip_model
