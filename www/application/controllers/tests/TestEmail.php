@@ -48,22 +48,24 @@ class TestEmail extends CI_Controller{
   }
 
   public function index(){
-      $this->testSendEmail_notsend();
+      $this->testSendEmail();
       $this->testSendEmail_DebugTrue();
       $this->report();
 
   }
-  public function testSendEmail_notsend(){
+  public function testSendEmail(){
+
       try{
-          $testcase = $this->emailmod->send_email('7316081@student.unpar.ac.id' , 'test' , 'tis');
+          $testcase = $this->emailmod->send_email('7316081@student.unpar.ac.id' , 'test' , 'this test is from bluetape');
           $temp = "masuk pak eko";
+      
       }
       catch(Exception $e){
           $temp = (string) $e->getMessage();
 
       }
-      $ex =  "Maaf, gagal mengirim email notifikasi.";
-      $this->unit->run($temp,$ex ,__FUNCTION__,'test email when it not send');
+      $ex = null;
+      $this->unit->run($testcase,$ex ,__FUNCTION__,'test email when it not send');
 
 
   }

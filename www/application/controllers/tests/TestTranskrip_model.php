@@ -37,7 +37,7 @@ class TestTranskrip_model extends CI_Controller
         $this->testLimitRequestByID();
         $this->requestTypesForbidden1();
         $this->requestTypesForbidden2();
-        $this->requestTypesForbidden3();
+         $this->requestTypesForbidden3();
     }
 
     function testRequestBy()
