@@ -20,6 +20,7 @@ class Auth extends CI_Controller {
 
         try {
             $code = $this->input->get('code');
+        
 
             if ($code !== NULL) {
                 $this->Auth_model->authenticateOauthCode($code);

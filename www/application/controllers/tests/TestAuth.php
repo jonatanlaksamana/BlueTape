@@ -15,7 +15,6 @@ class TestAuth extends CI_Controller {
         $this->load->database();
         $this->load->dbforge();
         $this->load->library('session') ;
-
         $this->client = new Google_Client();
         $this->client->setClientId($this->config->item('755661919348-3b2u44e804efh2mghpadttnqh3u4ujd9.apps.googleusercontent.com'));
         $this->client->setClientSecret($this->config->item('4dAVtOJPlTaFEkm3RbwBY7Vw'));
@@ -100,6 +99,9 @@ class TestAuth extends CI_Controller {
 
     }
 
+    function testOauth2callback(){
+        var_dump($this->Auth->authenticateOauthCode(''));
+    }
     function testcheckModuleAllowed(){
       try{
            $testcase = $this->Auth->checkModuleAllowed('siswabiasa');
@@ -147,6 +149,7 @@ class TestAuth extends CI_Controller {
         $this->testGetUserInfo() ;
         $this-> testLogout() ;
         $this->testcheckModuleAllowed_unlogin();
+        // $this->testOauth2callback();
 
 
     }

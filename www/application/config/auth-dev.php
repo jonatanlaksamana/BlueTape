@@ -10,10 +10,11 @@ $config['google-redirecturi'] = $config['domain'] . '/auth/oauth2callback';
 
 $config['email-config'] = Array(
     'protocol' => 'smtp',
-    'smtp_host' => 'ssl://smtp.googlemail.com',
-    'smtp_port' => 465,
-    'smtp_user' => 'xxx',
-    'smtp_pass' => 'xxx',
+    'smtp_host' => 'smtp.googlemail.com',
+    'smtp_port' => 587,
+    'smtp_user' => 'jonatanlaksamanapurnomo@gmail.com',
+    'smtp_pass' => 'choco123123',
+    'smtp_crypto' => 'tls',
     'mailtype' => 'html',
     'charset' => 'iso-8859-1'
 );

@@ -87,6 +87,8 @@ class Auth_model extends CI_Model {
         ));
     }
 
+    
+
     public function getUserInfo() {
         return $this->session->userdata('auth');
     }
