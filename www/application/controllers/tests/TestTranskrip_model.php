@@ -15,6 +15,7 @@ class TestTranskrip_model extends CI_Controller
         $this->load->library('unit_test');
         $this->load->database();
         $this->load->model('Transkrip_model');
+        $this->load->library('BlueTape');
     }
 
     /**
