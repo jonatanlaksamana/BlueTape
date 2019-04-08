@@ -54,17 +54,19 @@ class TestEmail extends CI_Controller{
 
   }
   public function testSendEmail(){
+    $temp = '';
       try{
           $testcase = $this->emailmod->send_email('7316081@student.unpar.ac.id' , 'test' , 'this test is from bluetape');
-          $temp = "masuk pak eko";
+       
+          $ex =  null;
+          $this->unit->run($testcase,$ex ,__FUNCTION__,'test email when it not send');
       
       }
       catch(Exception $e){
           $temp = (string) $e->getMessage();
 
       }
-      $ex =  null;
-      $this->unit->run($testcase,$ex ,__FUNCTION__,'test email when it not send');
+   
 
 
   }
