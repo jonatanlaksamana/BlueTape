@@ -14,8 +14,11 @@
 - Set Apache server mengarah ke direktori www
 - cp www/application/config/auth-dev.php www/application/config/auth.php
 - cp www/application/config/database-dev.php www/application/config/database.php
+-  Setting up auth.php dan database.php (jika malas mensetting ikuti configurasi yang sudah deafult pada database.php (gunakan xampp))
+-migrate (localhost/migrate)
 
 ##Testing Run
+
 -pergi ke folder www
 -php www/index.php tests testall
 -untuk melihat Semua Test Document (code coverage , test plan)
