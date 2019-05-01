@@ -146,12 +146,12 @@ class TestAuth extends CI_Controller {
     }
 
     function testAll() {
-        // $this->testcheckModuleAllowed();
-        // $this->TestCreateAuthURL() ;
-        // $this->testGetUserInfo() ;
-        // $this-> testLogout() ;
-        // $this->testcheckModuleAllowed_unlogin();
-        $this->testOauth2callback();
+        $this->testcheckModuleAllowed();
+        $this->TestCreateAuthURL() ;
+        $this->testGetUserInfo() ;
+        $this-> testLogout() ;
+        $this->testcheckModuleAllowed_unlogin();
+        // $this->testOauth2callback();
 
 
     }
