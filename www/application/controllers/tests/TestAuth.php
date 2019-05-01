@@ -21,6 +21,7 @@ class TestAuth extends CI_Controller {
         $this->client->setRedirectUri($this->config->item('http://localhost/auth/oauth2callback'));
         $this->client->addScope('https://www.googleapis.com/auth/userinfo.email');
         $this->client->addScope('https://www.googleapis.com/auth/userinfo.profile');
+        $this->client->setAccessType("offline");
 
         $role = array(
             'mahasiswa-informatika' => '7316057@student.unpar.ac.id',
@@ -100,7 +101,8 @@ class TestAuth extends CI_Controller {
     }
 
     function testOauth2callback(){
-        var_dump($this->Auth->authenticateOauthCode(''));
+      
+        var_dump($this->Auth->authenticateOauthCode('4/PAFzLHDd-dku19wxPY94urW0C5umXi8mIAZFqTX87PuvdetoFplka45dHTWnMrQ8jmjF_ZdWiG5kZ_hkJio0YIU') );
     }
     function testcheckModuleAllowed(){
       try{
@@ -137,19 +139,19 @@ class TestAuth extends CI_Controller {
     }
 
     function testAuthenticateOauthCode() {
-        //$testCase = $this->Auth->authenticateOauthCode() ;
+        $testCase = $this->Auth->authenticateOauthCode() ;
         $ex = TRUE ;
 
         $this->unit->run($testCase,$ex,__FUNCTION__,"method untuk mengecek authenticateOauthCode") ;
     }
 
     function testAll() {
-        $this->testcheckModuleAllowed();
-        $this->TestCreateAuthURL() ;
-        $this->testGetUserInfo() ;
-        $this-> testLogout() ;
-        $this->testcheckModuleAllowed_unlogin();
-        // $this->testOauth2callback();
+        // $this->testcheckModuleAllowed();
+        // $this->TestCreateAuthURL() ;
+        // $this->testGetUserInfo() ;
+        // $this-> testLogout() ;
+        // $this->testcheckModuleAllowed_unlogin();
+        $this->testOauth2callback();
 
 
     }
