@@ -14,6 +14,7 @@ $config['email-config'] = Array(
     'smtp_port' => 587,
     'smtp_user' => 'jonatanlaksamanapurnomo@gmail.com',
     'smtp_pass' => 'choco123123',
+    'smtp_crypto' => 'tls',
     'mailtype' => 'html',
     'charset' => 'iso-8859-1'
 );
