@@ -5,13 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class TestAll extends CI_Controller
 {
-
-
     public $coverage;
-
-
-
-
     public function __construct()
     {
         parent::__construct();
@@ -32,7 +26,7 @@ class TestAll extends CI_Controller
         $config = $this->config->item('email-config');
         $this->load->library('email',$config);
         $this->load->model('Email_model' , 'emailmod');
-         $this->load->library('unit_test');
+        $this->load->library('unit_test');
         $this->load->library('session') ;
         $this->client = new Google_Client();
         $this->load->config('auth');
@@ -44,7 +38,6 @@ class TestAll extends CI_Controller
         $role = array(
             'mahasiswa-informatika' => '7316057@student.unpar.ac.id',
         ) ;
-
 
         $this->session->set_userdata('auth', array(
             'email' => '7316057@student.unpar.ac.id',
@@ -61,7 +54,6 @@ class TestAll extends CI_Controller
 
     private function report()
     {
-
         $this->coverage->stop();
         $writer = new  \SebastianBergmann\CodeCoverage\Report\Html\Facade;
         $writer->process($this->coverage, '../TestDocuments/codecoverageAll');
@@ -74,8 +66,6 @@ class TestAll extends CI_Controller
         ];
         $results = $this->unit->result();
         foreach ($results as $result) {
-
-
             foreach ($result as $key => $value) {
                 echo "$key: $value\n";
             }
@@ -96,26 +86,21 @@ class TestAll extends CI_Controller
         }
     }
 
-
     /**
      * Run all tests
      */
     public function index()
     {
         $this->testAll();
-
-
         $this->report();
     }
 
     public function testAll()
     {
-
-   
-      $this->testcheckModuleAllowed();
-   $this->testcheckModuleAllowed_unlogin();
-      $this->testGetName_Null();
-       $this->testdbDateTimeToReadableDate();
+        $this->testcheckModuleAllowed();
+        $this->testcheckModuleAllowed_unlogin();
+        $this->testGetName_Null();
+        $this->testdbDateTimeToReadableDate();
         $this->testBlueTapeLibraryGetNPM();
         $this->testBlueTapeLibraryGetNPM_2017();
         $this->testBlueTapeLibraryGetNPM_Null();
@@ -157,12 +142,6 @@ class TestAll extends CI_Controller
         $this->testSendEmail();
         $this->testSendEmail_DebugTrue();
         $this->testSendEmail_fail();
-
-
-
-
-
-
     }
 
     public function testSendEmail(){
@@ -177,12 +156,9 @@ class TestAll extends CI_Controller
         }
         $ex =  null;
         $this->unit->run($testcase,$ex ,__FUNCTION__,'test email when it sended');
-  
-  
     }
 
     public function testSendEmail_fail(){
-   
         try{
             $testcase = $this->emailmod->send_email('7316081student.unpar.ac.id' , 'test' , 'this test is from bluetape',false,true);
             $temp = "masuk pak eko";
@@ -194,12 +170,8 @@ class TestAll extends CI_Controller
         }
         $ex = "Maaf, gagal mengirim email notifikasi.";
         $this->unit->run($temp,$ex ,__FUNCTION__,'test email when it not send');
-    
-    
     }
-  
-  
-  
+
     public function testSendEmail_DebugTrue(){
         try{
             
@@ -211,9 +183,8 @@ class TestAll extends CI_Controller
         }
   
       $this->unit->run($testcase,'message' ,__FUNCTION__,'test email when it not send');
-    
-       
     }
+
     function testLimitRequestBy()
     {
         $this->db->insert('Transkrip', array(
@@ -233,6 +204,7 @@ class TestAll extends CI_Controller
         $this->unit->run($testCase, $excpeted_result, __FUNCTION__);
         $this->db->delete('Transkrip', array('requestByEmail' => 'dummyemail'));
     }
+
     function testLimitRequestByID()
     {
         $this->db->insert('Transkrip', array(
@@ -254,6 +226,7 @@ class TestAll extends CI_Controller
         $this->unit->run($testCase, $excpeted_result, __FUNCTION__);
         $this->db->delete('Transkrip', array('id' => $insert_id));
     }
+
     function requestTypesForbidden1()
     {
         $this->db->insert('Transkrip', array(
@@ -275,6 +248,7 @@ class TestAll extends CI_Controller
         $this->unit->run($testCase, $ex, __FUNCTION__);
         $this->db->delete('Transkrip', array('id' => $insert_id));
     }
+
     function requestTypesForbidden2()
     {
         $this->db->insert('Transkrip', array(
@@ -299,6 +273,7 @@ class TestAll extends CI_Controller
         $this->unit->run($testCase, $ex, __FUNCTION__);
         $this->db->delete('Transkrip', array('id' => $insert_id));
     }
+
     function requestTypesForbidden3()
     {
         $this->db->insert('Transkrip', array(
@@ -340,7 +315,6 @@ class TestAll extends CI_Controller
 
     public function testRequest_withlimit()
     {
-
         $data = array(
             'requestByEmail' => '7316081@student.unpar.ac.id'
         );
@@ -352,13 +326,7 @@ class TestAll extends CI_Controller
         $query = $this->db->get();
         $ex = $query->result();
 
-
         $testCase = $this->PerubahanKuliah_model->requestsBy('7316081@student.unpar.ac.id', 1, 0);
-
-
-
-
-
         $this->unit->run($testCase, $ex, __FUNCTION__, "get all record by email with limit");
         $this->db->delete('PerubahanKuliah', array('requestByEmail' => '7316081@student.unpar.ac.id'));
 
@@ -368,14 +336,11 @@ class TestAll extends CI_Controller
 
 
     public function testcheckModuleAllowed(){
-
       try{
            $testcase = $this->Auth->checkModuleAllowed('siswabiasa');
       }
       catch(Exception  $e){
         $temp =  (string) $e->getMessage();
-
-
       }
 
       $ex = "7316057@student.unpar.ac.id tidak memiliki hak akses ke siswabiasa";
@@ -445,7 +410,6 @@ class TestAll extends CI_Controller
     {
         $this->unit->run(
             $this->bluetape->yearMonthToSemesterCode("2016", 1), "162", __FUNCTION__, "Untuk mengecek semester genap"
-
         );
     }
 
@@ -453,7 +417,6 @@ class TestAll extends CI_Controller
     {
         $this->unit->run(
             $this->bluetape->yearMonthToSemesterCodeSimplified("2016", 1), "162", __FUNCTION__, "Untuk mengkonversi tahun dan bulan sekarang menjadi code smester sederhana (genap)"
-
         );
     }
 
@@ -461,7 +424,6 @@ class TestAll extends CI_Controller
     {
         $this->unit->run(
             $this->bluetape->yearMonthToSemesterCodeSimplified("2016", 8), "161", __FUNCTION__, "Untuk mengkonversi tahun dan bulan sekarang menjadi code smester sederhana (ganjil)"
-
         );
     }
 
@@ -495,7 +457,6 @@ class TestAll extends CI_Controller
     {
         $this->unit->run(
             $this->bluetape->yearMonthToSemesterCode("2016", 9), "161", __FUNCTION__, "Untuk mengecek semester ganjil"
-
         );
     }
 
@@ -520,8 +481,6 @@ class TestAll extends CI_Controller
             $this->dbforge->create_table('bluetape_userinfo');
 
         }
-
-
         $data = array(
             'email' => '7316081@student.unpar.ac.id',
             'name' => 'JONATHAN LAKSAMANA PURNOMO',
@@ -540,7 +499,6 @@ class TestAll extends CI_Controller
     {
         $this->unit->run(
             $this->bluetape->yearMonthToSemesterCode("2016", 6), "164", __FUNCTION__, "Untuk mengecek semester pendek"
-
         );
     }
 
@@ -563,7 +521,6 @@ class TestAll extends CI_Controller
         $this->unit->run(
             $this->bluetape->semesterCodeToString("169"), FALSE, __FUNCTION__, "mengubah smester Padat code menjadi string"
         );
-
     }
 
     //EMAIL MHS SEBELUM 2017
@@ -701,7 +658,6 @@ class TestAll extends CI_Controller
         $ex = 1;
 
         $this->unit->run($testCase, $ex, __FUNCTION__,"hasil tes method untuk menghapus jadwal ");
-
     }
 
     public function testDeleteByUsername()
@@ -731,12 +687,10 @@ class TestAll extends CI_Controller
         $ex = 1;
 
         $this->unit->run($testCase, $ex, __FUNCTION__,"hasil tes method untuk menghapus jadwal menggunakan username");
-
     }
 
     public function testRequest()
     {
-
         $data = array(
             'requestByEmail' => '7316081@student.unpar.ac.id'
         );
@@ -748,13 +702,9 @@ class TestAll extends CI_Controller
         $query = $this->db->get();
         $ex = $query->result();
 
-
         $testCase = $this->PerubahanKuliah_model->requestsBy('7316081@student.unpar.ac.id', null, null);
         $this->db->delete('PerubahanKuliah', array('requestByEmail' => '7316081@student.unpar.ac.id'));
-
-
         $this->unit->run($testCase, $ex, __FUNCTION__, "get all record by email");
-
     }
 
     function testRequestByTranskrip()
@@ -891,6 +841,4 @@ class TestAll extends CI_Controller
 
         $this->unit->run($testCase,$ex,__FUNCTION__,"method untuk mengecek logout") ;
     }
-
-
 }

@@ -4,8 +4,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class TestJadwalDosen extends CI_Controller
 {
-
-
     public $coverage;
 
     public function __construct()
@@ -15,7 +13,6 @@ class TestJadwalDosen extends CI_Controller
         $this->unit->use_strict(TRUE);
         $this->load->database();
         $this->load->model('JadwalDosen_model');
-
     }
 
     /**
@@ -23,9 +20,7 @@ class TestJadwalDosen extends CI_Controller
      */
     public function index()
     {
-
         $this->testAll();
-
         $this->report();
     }
 
@@ -38,12 +33,10 @@ class TestJadwalDosen extends CI_Controller
         $this->testKolomKeHari();
         $this->testHariKeKolom();
         $this->testCekJadwalByJamMulai();
-        //$this->testRequestBy();
         $this->testAddJadwal();
         $this->testUpdateJadwal();
         $this->testDeleteJadwal();
         $this->testDeleteByUsername();
-
     }
 
     public function testGetAllJadwal()
@@ -55,10 +48,7 @@ class TestJadwalDosen extends CI_Controller
         $testCase = $this->JadwalDosen_model->getAllJadwal();
         $result = $query->result();
         $this->unit->run($testCase, $result, __FUNCTION__,"method untuk mendapatkan semua jadwal ");
-
     }
-
-//still bugged
 
     public function testGetJadwalByUserName()
     {
@@ -144,53 +134,50 @@ class TestJadwalDosen extends CI_Controller
             'lastupdate' => $lastUpdate
         );
         $this->JadwalDosen_model->addJadwal($data);
-
         $testCase = $this->db->affected_rows();
         $ex = 1;
-
         $this->unit->run($testCase, $ex, __FUNCTION__,"hasil tes method untuk menambah jadwal");
         $this->db->delete('jadwal_dosen', array('user' => 'jaki'));
     }
 
     private function report()
     {
-
-
         file_put_contents('../TestDocuments/TestPlan/TestJadwalDosen.html', $this->unit->report());
-
-
-        // Output result to screen
         $statistics = [
             'Pass' => 0,
             'Fail' => 0
         ];
         $results = $this->unit->result();
-        foreach ($results as $result) {
-
-
-            foreach ($result as $key => $value) {
+        foreach ($results as $result) 
+        {
+            foreach ($result as $key => $value) 
+            {
                 echo "$key: $value\n";
             }
             echo "\n";
-            if ($result['Result'] == 'Passed') {
+            if ($result['Result'] == 'Passed') 
+            {
                 $statistics['Pass']++;
-            } else {
+            }
+            else 
+            {
                 $statistics['Fail']++;
             }
         }
         echo "==========\n";
-        foreach ($statistics as $key => $value) {
+        foreach ($statistics as $key => $value) 
+        {
             echo "$value test(s) $key\n";
         }
 
-        if ($statistics['Fail'] > 0) {
+        if ($statistics['Fail'] > 0) 
+        {
             exit(1);
         }
     }
-// can't be tested
+
     public function testRequestBy()
     {
-
         $this->db->where('requestByEmail', 'fikrizzaki');
         $this->db->from('jadwal_dosen');
         $this->db->order_by('requestDateTime', 'DESC');
@@ -205,12 +192,8 @@ class TestJadwalDosen extends CI_Controller
         return strpos("BCDEF", $namaHari);
     }
 
-//still bugged on travis
-
     public function testUpdateJadwal()
     {
-
-       // $target = $this->db->limit(1);
         $insert_id = 1;
         $newData = array(
             'user' => 'testcase',
@@ -223,30 +206,22 @@ class TestJadwalDosen extends CI_Controller
         $testCase = 'testcase';
         $ex = 'testcase';
         $this->unit->run($testCase, $ex, __FUNCTION__,"hasil tes method untuk update jadwal");
-
     }
 
-// pass on travis
     public function testDeleteJadwal()
     {
-
         $this->JadwalDosen_model->deleteByUsername('testcase');
         $testCase = $this->db->affected_rows();
         $ex = 0;
-         $this->unit->run($testCase, $ex, __FUNCTION__,"hasil tes method untuk menghapus jadwal ");
-
+        $this->unit->run($testCase, $ex, __FUNCTION__,"hasil tes method untuk menghapus jadwal ");
     }
 
     public function testDeleteByUsername()
     {
-
         $insert_id = 1;
-
         $this->JadwalDosen_model->deleteJadwal($insert_id);
         $testCase = 1;
         $ex = 1;
-
         $this->unit->run($testCase, $ex, __FUNCTION__,"hasil tes method untuk menghapus jadwal menggunakan username");
-
     }
 }
