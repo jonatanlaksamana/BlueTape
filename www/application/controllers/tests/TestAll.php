@@ -35,9 +35,10 @@ class TestAll extends CI_Controller
          $this->load->library('unit_test');
         $this->load->library('session') ;
         $this->client = new Google_Client();
-        $this->client->setClientId($this->config->item('755661919348-3b2u44e804efh2mghpadttnqh3u4ujd9.apps.googleusercontent.com'));
-        $this->client->setClientSecret($this->config->item('4dAVtOJPlTaFEkm3RbwBY7Vw'));
-        $this->client->setRedirectUri($this->config->item('http://localhost/auth/oauth2callback'));
+        $this->load->config('auth');
+        $this->client->setClientId($this->config->item('google-clientid'));
+        $this->client->setClientSecret($this->config->item('google-clientsecret'));
+        $this->client->setRedirectUri($this->config->item('google-redirecturi'));
         $this->client->addScope('https://www.googleapis.com/auth/userinfo.email');
         $this->client->addScope('https://www.googleapis.com/auth/userinfo.profile');
         $role = array(
@@ -56,23 +57,6 @@ class TestAll extends CI_Controller
         $this->load->model('PerubahanKuliah_model');
         $this->load->database();
         $this->load->dbforge();
-        $str = '
-<table border="0"  cellpadding="4" cellspacing="1">
-
-        <tr>
-                <td></td>
-                <td></td>
-        </tr>
-
-        <br>
-
-
-</table>';
-
-
-        $this->unit->set_template($str);
-
-
     }
 
     private function report()
@@ -161,7 +145,7 @@ class TestAll extends CI_Controller
         $this->testRequestByID();
         $this->TestCreateAuthURL() ;
         $this->testGetUserInfo() ;
-        $this-> testLogout() ;
+        $this->testLogout();
         $this->testRequest_withlimit();
         $this->testLimitRequestBy();
         $this->testLimitRequestByID();
@@ -172,7 +156,7 @@ class TestAll extends CI_Controller
         $this->testDeleteByUsername();
         $this->testSendEmail();
         $this->testSendEmail_DebugTrue();
-        $this-> testSendEmail_fail();
+        $this->testSendEmail_fail();
 
 
 
@@ -182,7 +166,6 @@ class TestAll extends CI_Controller
     }
 
     public function testSendEmail(){
-        copy('../../config/auth-backup.php','../../config/auth.php');
         try{
             $testcase = $this->emailmod->send_email('7316081@student.unpar.ac.id' , 'test' , 'this test is from bluetape');
             $temp = "masuk pak eko";
@@ -199,9 +182,7 @@ class TestAll extends CI_Controller
     }
 
     public function testSendEmail_fail(){
- 
-        copy('../../config/auth-dev.php','../../config/auth.php');
-    // 
+   
         try{
             $testcase = $this->emailmod->send_email('7316081student.unpar.ac.id' , 'test' , 'this test is from bluetape',false,true);
             $temp = "masuk pak eko";
@@ -891,9 +872,10 @@ class TestAll extends CI_Controller
     }
     function TestCreateAuthURL() {
         $testCase = $this->Auth->createAuthURL() ;
-        $ex = "https://accounts.google.com/o/oauth2/auth?response_type=code&redirect_uri=http%3A%2F%2Flocalhost%2Fauth%2Foauth2callback&client_id=755661919348-3b2u44e804efh2mghpadttnqh3u4ujd9.apps.googleusercontent.com&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&access_type=online&approval_prompt=auto";
+                $ex = "https://accounts.google.com/o/oauth2/auth?response_type=code&redirect_uri=http%3A%2F%2Flocalhost%2Fauth%2Foauth2callback&client_id=755661919348-psqarioap9frv49rv8jtk38sekm8gqjt.apps.googleusercontent.com&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&access_type=online&approval_prompt=auto";
         $this->unit->run($testCase,$ex,__FUNCTION__,"method untuk mengetes createAuthURL") ;
     }
+
 
     function testGetUserInfo() {
 

@@ -57,7 +57,7 @@ class TestEmail extends CI_Controller{
   }
   public function testSendEmail(){
 
-      copy('../../config/auth-backup.php','../../config/auth.php');
+     
       try{
           $testcase = $this->emailmod->send_email('7316081@student.unpar.ac.id' , 'test' , 'this test is from bluetape');
           $temp = "masuk pak eko";
@@ -74,7 +74,7 @@ class TestEmail extends CI_Controller{
   }
   public function testSendEmail_fail(){
  
-    copy('../../config/auth-dev.php','../../config/auth.php');
+
 // 
     try{
         $testcase = $this->emailmod->send_email('7316081student.unpar.ac.id' , 'test' , 'this test is from bluetape',false,true);

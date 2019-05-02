@@ -119,7 +119,7 @@ class TestAuth extends CI_Controller {
 
     function TestCreateAuthURL() {
         $testCase = $this->Auth->createAuthURL() ;
-        $ex = "https://accounts.google.com/o/oauth2/auth?response_type=code&redirect_uri=http%3A%2F%2Flocalhost%2Fauth%2Foauth2callback&client_id=755661919348-3b2u44e804efh2mghpadttnqh3u4ujd9.apps.googleusercontent.com&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&access_type=online&approval_prompt=auto";
+                $ex = "https://accounts.google.com/o/oauth2/auth?response_type=code&redirect_uri=http%3A%2F%2Flocalhost%2Fauth%2Foauth2callback&client_id=755661919348-psqarioap9frv49rv8jtk38sekm8gqjt.apps.googleusercontent.com&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&access_type=online&approval_prompt=auto";
         $this->unit->run($testCase,$ex,__FUNCTION__,"method untuk mengetes createAuthURL") ;
     }
 
@@ -147,11 +147,11 @@ class TestAuth extends CI_Controller {
 
     function testAll() {
         // $this->testcheckModuleAllowed();
-        // $this->TestCreateAuthURL() ;
+        $this->TestCreateAuthURL() ;
         // $this->testGetUserInfo() ;
         // $this-> testLogout() ;
         // $this->testcheckModuleAllowed_unlogin();
-        $this->testOauth2callback();
+        // $this->testOauth2callback();
 
 
     }
