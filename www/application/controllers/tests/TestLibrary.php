@@ -5,8 +5,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class TestLibrary extends CI_Controller
 {
-
-
     public $coverage;
 
     public function __construct()
@@ -16,9 +14,6 @@ class TestLibrary extends CI_Controller
         $this->load->library('BlueTape');
         $this->load->database();
         $this->load->dbforge();
-
-
-
     }
 
     /**
@@ -27,14 +22,11 @@ class TestLibrary extends CI_Controller
     public function index()
     {
         $this->testAll();
-
-
         $this->report();
     }
 
     public function testAll()
     {
-
         $this->testBlueTapeLibraryGetNPM();
         $this->testBlueTapeLibraryGetNPM_2017();
         $this->testBlueTapeLibraryGetNPM_Null();
@@ -52,16 +44,12 @@ class TestLibrary extends CI_Controller
         $this->testSmesterCodeToStringFalse();
         $this->testGetName_Null();
         $this->testdbDateTimeToReadableDate();
-
-
     }
 
-    public function testdbDateTimeToReadableDate(){
+    public function testdbDateTimeToReadableDate()
+    {
       $testcase = $this->bluetape->dbDateTimeToReadableDate("2019-02-25 09:48:20");
-
       $ex = "Monday, 25 February 2019";
-
-
       $this->unit->run($testcase,$ex,__FUNCTION__,'test db datetime to readable date ');
     }
 
@@ -99,7 +87,6 @@ class TestLibrary extends CI_Controller
     {
         $this->unit->run(
             $this->bluetape->yearMonthToSemesterCode("2016", 1), "162", __FUNCTION__, "Untuk mengecek semester genap"
-
         );
     }
 
@@ -107,7 +94,6 @@ class TestLibrary extends CI_Controller
     {
         $this->unit->run(
             $this->bluetape->yearMonthToSemesterCodeSimplified("2016", 1), "162", __FUNCTION__, "Untuk mengkonversi tahun dan bulan sekarang menjadi code smester sederhana (genap)"
-
         );
     }
 
@@ -115,7 +101,6 @@ class TestLibrary extends CI_Controller
     {
         $this->unit->run(
             $this->bluetape->yearMonthToSemesterCodeSimplified("2016", 8), "161", __FUNCTION__, "Untuk mengkonversi tahun dan bulan sekarang menjadi code smester sederhana (ganjil)"
-
         );
     }
 
@@ -124,7 +109,6 @@ class TestLibrary extends CI_Controller
         $this->unit->run(
             $this->bluetape->semesterCodeToString("141"), "Ganjil 2014/2015", __FUNCTION__, "mengubah smester Ganjil code menjadi string"
         );
-
     }
 
     function testSmesterCodeToStringGenap()
@@ -132,7 +116,6 @@ class TestLibrary extends CI_Controller
         $this->unit->run(
             $this->bluetape->semesterCodeToString("152"), "Genap 2014/2015", __FUNCTION__, "mengubah smester Genap code menjadi string"
         );
-
     }
 
     function testSmesterCodeToStringPadat()
@@ -140,22 +123,20 @@ class TestLibrary extends CI_Controller
         $this->unit->run(
             $this->bluetape->semesterCodeToString("164"), "Padat 2015/2016", __FUNCTION__, "mengubah smester Padat code menjadi string"
         );
-
     }
 
-//still bugged
 
     function testGetSemester_ganjil()
     {
         $this->unit->run(
             $this->bluetape->yearMonthToSemesterCode("2016", 9), "161", __FUNCTION__, "Untuk mengecek semester ganjil"
-
         );
     }
 
     function testGetName()
     {
-        if (!$this->db->table_exists('bluetape_userinfo')) {
+        if (!$this->db->table_exists('bluetape_userinfo'))
+        {
             $fields = array(
                 'email' => array(
                     'type' => 'VARCHAR',
@@ -172,9 +153,7 @@ class TestLibrary extends CI_Controller
             $this->dbforge->add_field($fields);
             $this->dbforge->add_key('email', TRUE);
             $this->dbforge->create_table('bluetape_userinfo');
-
         }
-
 
         $data = array(
             'email' => '7316081@student.unpar.ac.id',
@@ -190,7 +169,8 @@ class TestLibrary extends CI_Controller
         $this->db->delete('bluetape_userinfo', array('email' => '7316081@student.unpar.ac.id'));
     }
 
-    public function testGetName_Null(){
+    public function testGetName_Null()
+    {
       $testcase = $this->bluetape->getName('7316000123@student.unpar.ac.id');
       $ex = null;
       $this->unit->run($testcase,$ex,__FUNCTION__,"test getname when email is invaild");
@@ -200,7 +180,6 @@ class TestLibrary extends CI_Controller
     {
         $this->unit->run(
             $this->bluetape->yearMonthToSemesterCode("2016", 6), "164", __FUNCTION__, "Untuk mengecek semester pendek"
-
         );
     }
 
@@ -230,35 +209,36 @@ class TestLibrary extends CI_Controller
 
     private function report()
     {
-
-
         file_put_contents('../TestDocuments/TestPlan/test_Library.html', $this->unit->report());
-
-        // Output result to screen
         $statistics = [
             'Pass' => 0,
             'Fail' => 0
         ];
         $results = $this->unit->result();
-        foreach ($results as $result) {
-
-
-            foreach ($result as $key => $value) {
+        foreach ($results as $result) 
+        {
+            foreach ($result as $key => $value) 
+            {
                 echo "$key: $value\n";
             }
             echo "\n";
-            if ($result['Result'] == 'Passed') {
+            if ($result['Result'] == 'Passed') 
+            {
                 $statistics['Pass']++;
-            } else {
+            } 
+            else 
+            {
                 $statistics['Fail']++;
             }
         }
         echo "==========\n";
-        foreach ($statistics as $key => $value) {
+        foreach ($statistics as $key => $value) 
+        {
             echo "$value test(s) $key\n";
         }
 
-        if ($statistics['Fail'] > 0) {
+        if ($statistics['Fail'] > 0) 
+        {
             exit(1);
         }
     }

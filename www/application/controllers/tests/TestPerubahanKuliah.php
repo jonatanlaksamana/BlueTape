@@ -2,11 +2,8 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-
 class TestPerubahanKuliah extends CI_Controller
 {
-
-
     public $coverage;
 
     public function __construct()
@@ -15,20 +12,6 @@ class TestPerubahanKuliah extends CI_Controller
         $this->load->library('unit_test');;
         $this->load->model('PerubahanKuliah_model');
         $this->load->database();
-//         $str = '
-// <table border="0"  cellpadding="4" cellspacing="1">
-// {rows}
-//         <tr>
-//                 <td></td>
-//                 <td></td>
-//         </tr>
-//
-//         <br>
-//
-//
-// </table>';
-//         $this->unit->set_template($str);
-
     }
 
     /**
@@ -36,10 +19,7 @@ class TestPerubahanKuliah extends CI_Controller
      */
     public function index()
     {
-
         $this->testAll();
-
-
         $this->report();
     }
 
@@ -47,12 +27,10 @@ class TestPerubahanKuliah extends CI_Controller
     {
         $this->testRequest();
         $this->testRequest_withlimit();
-
     }
 
     public function testRequest()
     {
-
         $data = array(
             'requestByEmail' => '7316081@student.unpar.ac.id'
         );
@@ -63,19 +41,13 @@ class TestPerubahanKuliah extends CI_Controller
         $this->db->order_by('requestDateTime', 'DESC');
         $query = $this->db->get();
         $ex = $query->result();
-
-
         $testCase = $this->PerubahanKuliah_model->requestsBy('7316081@student.unpar.ac.id', null, null);
         $this->db->delete('PerubahanKuliah', array('requestByEmail' => '7316081@student.unpar.ac.id'));
-
-
         $this->unit->run($testCase, $ex, __FUNCTION__, "get all record by email");
-
     }
 
     public function testRequest_withlimit()
     {
-
         $data = array(
             'requestByEmail' => '7316081@student.unpar.ac.id'
         );
@@ -86,51 +58,43 @@ class TestPerubahanKuliah extends CI_Controller
         $this->db->order_by('requestDateTime', 'DESC');
         $query = $this->db->get();
         $ex = $query->result();
-
-
         $testCase = $this->PerubahanKuliah_model->requestsBy('7316081@student.unpar.ac.id', 1, 0);
-
-
-
-
-
         $this->unit->run($testCase, $ex, __FUNCTION__, "get all record by email with limit");
         $this->db->delete('PerubahanKuliah', array('requestByEmail' => '7316081@student.unpar.ac.id'));
-
     }
 
     private function report()
     {
-
-
         file_put_contents('../TestDocuments/TestPlan/TestPerubahanKuliah.html', $this->unit->report());
-
-
-        // Output result to screen
         $statistics = [
             'Pass' => 0,
             'Fail' => 0
         ];
         $results = $this->unit->result();
-        foreach ($results as $result) {
-
-
-            foreach ($result as $key => $value) {
+        foreach ($results as $result) 
+        {
+            foreach ($result as $key => $value) 
+            {
                 echo "$key: $value\n";
             }
             echo "\n";
-            if ($result['Result'] == 'Passed') {
+            if ($result['Result'] == 'Passed') 
+            {
                 $statistics['Pass']++;
-            } else {
+            } 
+            else 
+            {
                 $statistics['Fail']++;
             }
         }
         echo "==========\n";
-        foreach ($statistics as $key => $value) {
+        foreach ($statistics as $key => $value) 
+        {
             echo "$value test(s) $key\n";
         }
 
-        if ($statistics['Fail'] > 0) {
+        if ($statistics['Fail'] > 0) 
+        {
             exit(1);
         }
     }

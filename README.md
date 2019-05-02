@@ -1,10 +1,11 @@
 # BlueTape
+[![Build Status](https://travis-ci.org/jonatanlaksamana/BlueTape.svg?branch=master)](https://travis-ci.org/jonatanlaksamana/BlueTape)
 
 ## Prerequisites untuk testing
 
--PHP version 7.2 or higher
--Xampp
--Xdebug
+- PHP version 7.2 or higher
+- Xampp
+- Xdebug
 
 ## Setup
 
@@ -43,5 +44,5 @@ Buka kembali git bash :
 Dengan menggunakan git bash :
 - Pastikan sudah di directory /c
 - masuk ke directory dengan command: cd xampp/htdocs/www
--untuk testing gunakan command : php index.php tests testall
--untuk melihat Semua Test Document (code coverage dan test plan), masuk ke folder bluetape/TestDocuments
+- untuk testing gunakan command : php index.php tests testall
+- untuk melihat Semua Test Document (code coverage dan test plan), masuk ke folder bluetape/TestDocuments
