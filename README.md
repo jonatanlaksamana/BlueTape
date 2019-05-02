@@ -19,27 +19,27 @@ Dengan menggunakan git bash :
 - Kemudian buka file httpd-vhosts.conf
 - ubah DocumentRoot dan ServerName seperti kode dibawah ini 
 ======================================================================
-        <VirtualHost *:80>
-            ##ServerAdmin webmaster@dummy-host2.example.com
-            DocumentRoot "C:/xampp/htdocs/bluetape/www"
-            ServerName bluetape.dev
-            ##ErrorLog "logs/dummy-host2.example.com-error.log"
-            ##CustomLog "logs/dummy-host2.example.com-access.log" common
+        <VirtualHost *:80> <br>
+            ##ServerAdmin webmaster@dummy-host2.example.com <br>
+            DocumentRoot "C:/xampp/htdocs/bluetape/www" <br>
+            ServerName bluetape.dev <br>
+            ##ErrorLog "logs/dummy-host2.example.com-error.log" <br>
+            ##CustomLog "logs/dummy-host2.example.com-access.log" common <br>
         </VirtualHost>
 ======================================================================
 
 Buka kembali git bash :
 - copy file auth-dev.php dengan command: cp www/application/config/auth-dev.php www/application/config/auth.php
 - copy file database-dev.php dengan command: cp www/application/config/database-dev.php www/application/config/database.php
-
--create database bluetape di database management system (phpmyadmin) 
--buka folder bluetape/www/application/config/database.php, kemudian pastikan :
-    'username' => 'root',
-	'password' => '',
-	'database' => 'bluetape'
--migrate database dengan cara buka browser lalu ketik: localhost/migrate
+- create database bluetape di database management system (phpmyadmin) 
+- buka folder bluetape/www/application/config/database.php, kemudian pastikan : <br>
+    'username' => 'root', <br>
+	'password' => '', <br>
+	'database' => 'bluetape' <br>
+- migrate database dengan cara buka browser lalu ketik: localhost/migrate
 
 ##Testing Run
+
 Dengan menggunakan git bash :
 - Pastikan sudah di directory /c
 - masuk ke directory dengan command: cd xampp/htdocs/www
