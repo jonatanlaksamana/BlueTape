@@ -102,7 +102,8 @@ class Auth_model extends CI_Model {
         if (!in_array($module, $this->session->userdata('auth')['modules'])) {
             throw new Exception($userInfo['email'] . " tidak memiliki hak akses ke $module");
         }
-    }
+    } // unfixed bug on code coverage references at :https://dotnettools-support.jetbrains.com/hc/en-us/community/posts/205835509-Closing-braces-sometimes-not-being-included-in-code-coverage
+
 
     /**
      * Melakukan logout

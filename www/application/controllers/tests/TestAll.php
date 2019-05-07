@@ -5,7 +5,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class TestAll extends CI_Controller
 {
+
+
     public $coverage;
+
+
+
+
     public function __construct()
     {
         parent::__construct();
@@ -22,22 +28,17 @@ class TestAll extends CI_Controller
         $this->load->model('Auth_model', 'Auth');
         $this->load->database();
         $this->load->dbforge();
-        $this->load->config('auth');
-        $config = $this->config->item('email-config');
-        $this->load->library('email',$config);
-        $this->load->model('Email_model' , 'emailmod');
-        $this->load->library('unit_test');
         $this->load->library('session') ;
         $this->client = new Google_Client();
-        $this->load->config('auth');
-        $this->client->setClientId($this->config->item('google-clientid'));
-        $this->client->setClientSecret($this->config->item('google-clientsecret'));
-        $this->client->setRedirectUri($this->config->item('google-redirecturi'));
+        $this->client->setClientId($this->config->item('755661919348-3b2u44e804efh2mghpadttnqh3u4ujd9.apps.googleusercontent.com'));
+        $this->client->setClientSecret($this->config->item('4dAVtOJPlTaFEkm3RbwBY7Vw'));
+        $this->client->setRedirectUri($this->config->item('http://localhost/auth/oauth2callback'));
         $this->client->addScope('https://www.googleapis.com/auth/userinfo.email');
         $this->client->addScope('https://www.googleapis.com/auth/userinfo.profile');
         $role = array(
             'mahasiswa-informatika' => '7316057@student.unpar.ac.id',
         ) ;
+
 
         $this->session->set_userdata('auth', array(
             'email' => '7316057@student.unpar.ac.id',
@@ -50,10 +51,28 @@ class TestAll extends CI_Controller
         $this->load->model('PerubahanKuliah_model');
         $this->load->database();
         $this->load->dbforge();
+        $str = '
+<table border="0"  cellpadding="4" cellspacing="1">
+
+        <tr>
+                <td></td>
+                <td></td>
+        </tr>
+
+        <br>
+
+
+</table>';
+
+
+        $this->unit->set_template($str);
+
+
     }
 
     private function report()
     {
+
         $this->coverage->stop();
         $writer = new  \SebastianBergmann\CodeCoverage\Report\Html\Facade;
         $writer->process($this->coverage, '../TestDocuments/codecoverageAll');
@@ -66,6 +85,8 @@ class TestAll extends CI_Controller
         ];
         $results = $this->unit->result();
         foreach ($results as $result) {
+
+
             foreach ($result as $key => $value) {
                 echo "$key: $value\n";
             }
@@ -86,21 +107,26 @@ class TestAll extends CI_Controller
         }
     }
 
+
     /**
      * Run all tests
      */
     public function index()
     {
         $this->testAll();
+
+
         $this->report();
     }
 
     public function testAll()
     {
-        $this->testcheckModuleAllowed();
-        $this->testcheckModuleAllowed_unlogin();
-        $this->testGetName_Null();
-        $this->testdbDateTimeToReadableDate();
+
+   
+      $this->testcheckModuleAllowed();
+   $this->testcheckModuleAllowed_unlogin();
+      $this->testGetName_Null();
+       $this->testdbDateTimeToReadableDate();
         $this->testBlueTapeLibraryGetNPM();
         $this->testBlueTapeLibraryGetNPM_2017();
         $this->testBlueTapeLibraryGetNPM_Null();
@@ -123,6 +149,7 @@ class TestAll extends CI_Controller
         $this->testKolomKeHari();
         $this->testHariKeKolom();
         $this->testCekJadwalByJamMulai();
+        // $this->testRequestBy();
         $this->testAddJadwal();
         $this->testUpdateJadwal();
         $this->testRequest();
@@ -130,61 +157,24 @@ class TestAll extends CI_Controller
         $this->testRequestByID();
         $this->TestCreateAuthURL() ;
         $this->testGetUserInfo() ;
-        $this->testLogout();
+        $this-> testLogout() ;
         $this->testRequest_withlimit();
+
         $this->testLimitRequestBy();
         $this->testLimitRequestByID();
         $this->requestTypesForbidden1();
         $this->requestTypesForbidden2();
         $this->requestTypesForbidden3();
+
         $this->testDeleteJadwal();
         $this->testDeleteByUsername();
-        $this->testSendEmail();
-        $this->testSendEmail_DebugTrue();
-        $this->testSendEmail_fail();
-    }
 
-    public function testSendEmail(){
-        try{
-            $testcase = $this->emailmod->send_email('7316081@student.unpar.ac.id' , 'test' , 'this test is from bluetape');
-            $temp = "masuk pak eko";
-        
-        }
-        catch(Exception $e){
-            $temp = (string) $e->getMessage();
-  
-        }
-        $ex =  null;
-        $this->unit->run($testcase,$ex ,__FUNCTION__,'test email when it sended');
-    }
 
-    public function testSendEmail_fail(){
-        try{
-            $testcase = $this->emailmod->send_email('7316081student.unpar.ac.id' , 'test' , 'this test is from bluetape',false,true);
-            $temp = "masuk pak eko";
-        
-        }
-        catch(Exception $e){
-            $temp = (string) $e->getMessage();
-    
-        }
-        $ex = "Maaf, gagal mengirim email notifikasi.";
-        $this->unit->run($temp,$ex ,__FUNCTION__,'test email when it not send');
-    }
 
-    public function testSendEmail_DebugTrue(){
-        try{
-            
-            $testcase = $this->emailmod->send_email('7316081@student.unpar.ac.id' , 'head' , 'message',true);
-  
-        }
-        catch(Exception $e){
-            $e->getMessage();
-        }
-  
-      $this->unit->run($testcase,'message' ,__FUNCTION__,'test email when it not send');
-    }
 
+
+
+    }
     function testLimitRequestBy()
     {
         $this->db->insert('Transkrip', array(
@@ -204,7 +194,6 @@ class TestAll extends CI_Controller
         $this->unit->run($testCase, $excpeted_result, __FUNCTION__);
         $this->db->delete('Transkrip', array('requestByEmail' => 'dummyemail'));
     }
-
     function testLimitRequestByID()
     {
         $this->db->insert('Transkrip', array(
@@ -226,7 +215,6 @@ class TestAll extends CI_Controller
         $this->unit->run($testCase, $excpeted_result, __FUNCTION__);
         $this->db->delete('Transkrip', array('id' => $insert_id));
     }
-
     function requestTypesForbidden1()
     {
         $this->db->insert('Transkrip', array(
@@ -248,7 +236,6 @@ class TestAll extends CI_Controller
         $this->unit->run($testCase, $ex, __FUNCTION__);
         $this->db->delete('Transkrip', array('id' => $insert_id));
     }
-
     function requestTypesForbidden2()
     {
         $this->db->insert('Transkrip', array(
@@ -273,7 +260,6 @@ class TestAll extends CI_Controller
         $this->unit->run($testCase, $ex, __FUNCTION__);
         $this->db->delete('Transkrip', array('id' => $insert_id));
     }
-
     function requestTypesForbidden3()
     {
         $this->db->insert('Transkrip', array(
@@ -315,6 +301,7 @@ class TestAll extends CI_Controller
 
     public function testRequest_withlimit()
     {
+
         $data = array(
             'requestByEmail' => '7316081@student.unpar.ac.id'
         );
@@ -326,7 +313,13 @@ class TestAll extends CI_Controller
         $query = $this->db->get();
         $ex = $query->result();
 
+
         $testCase = $this->PerubahanKuliah_model->requestsBy('7316081@student.unpar.ac.id', 1, 0);
+
+
+
+
+
         $this->unit->run($testCase, $ex, __FUNCTION__, "get all record by email with limit");
         $this->db->delete('PerubahanKuliah', array('requestByEmail' => '7316081@student.unpar.ac.id'));
 
@@ -336,11 +329,14 @@ class TestAll extends CI_Controller
 
 
     public function testcheckModuleAllowed(){
+
       try{
            $testcase = $this->Auth->checkModuleAllowed('siswabiasa');
       }
       catch(Exception  $e){
         $temp =  (string) $e->getMessage();
+
+
       }
 
       $ex = "7316057@student.unpar.ac.id tidak memiliki hak akses ke siswabiasa";
@@ -410,6 +406,7 @@ class TestAll extends CI_Controller
     {
         $this->unit->run(
             $this->bluetape->yearMonthToSemesterCode("2016", 1), "162", __FUNCTION__, "Untuk mengecek semester genap"
+
         );
     }
 
@@ -417,6 +414,7 @@ class TestAll extends CI_Controller
     {
         $this->unit->run(
             $this->bluetape->yearMonthToSemesterCodeSimplified("2016", 1), "162", __FUNCTION__, "Untuk mengkonversi tahun dan bulan sekarang menjadi code smester sederhana (genap)"
+
         );
     }
 
@@ -424,6 +422,7 @@ class TestAll extends CI_Controller
     {
         $this->unit->run(
             $this->bluetape->yearMonthToSemesterCodeSimplified("2016", 8), "161", __FUNCTION__, "Untuk mengkonversi tahun dan bulan sekarang menjadi code smester sederhana (ganjil)"
+
         );
     }
 
@@ -457,6 +456,7 @@ class TestAll extends CI_Controller
     {
         $this->unit->run(
             $this->bluetape->yearMonthToSemesterCode("2016", 9), "161", __FUNCTION__, "Untuk mengecek semester ganjil"
+
         );
     }
 
@@ -481,6 +481,8 @@ class TestAll extends CI_Controller
             $this->dbforge->create_table('bluetape_userinfo');
 
         }
+
+
         $data = array(
             'email' => '7316081@student.unpar.ac.id',
             'name' => 'JONATHAN LAKSAMANA PURNOMO',
@@ -499,6 +501,7 @@ class TestAll extends CI_Controller
     {
         $this->unit->run(
             $this->bluetape->yearMonthToSemesterCode("2016", 6), "164", __FUNCTION__, "Untuk mengecek semester pendek"
+
         );
     }
 
@@ -521,6 +524,7 @@ class TestAll extends CI_Controller
         $this->unit->run(
             $this->bluetape->semesterCodeToString("169"), FALSE, __FUNCTION__, "mengubah smester Padat code menjadi string"
         );
+
     }
 
     //EMAIL MHS SEBELUM 2017
@@ -658,6 +662,7 @@ class TestAll extends CI_Controller
         $ex = 1;
 
         $this->unit->run($testCase, $ex, __FUNCTION__,"hasil tes method untuk menghapus jadwal ");
+
     }
 
     public function testDeleteByUsername()
@@ -687,10 +692,12 @@ class TestAll extends CI_Controller
         $ex = 1;
 
         $this->unit->run($testCase, $ex, __FUNCTION__,"hasil tes method untuk menghapus jadwal menggunakan username");
+
     }
 
     public function testRequest()
     {
+
         $data = array(
             'requestByEmail' => '7316081@student.unpar.ac.id'
         );
@@ -702,9 +709,13 @@ class TestAll extends CI_Controller
         $query = $this->db->get();
         $ex = $query->result();
 
+
         $testCase = $this->PerubahanKuliah_model->requestsBy('7316081@student.unpar.ac.id', null, null);
         $this->db->delete('PerubahanKuliah', array('requestByEmail' => '7316081@student.unpar.ac.id'));
+
+
         $this->unit->run($testCase, $ex, __FUNCTION__, "get all record by email");
+
     }
 
     function testRequestByTranskrip()
@@ -757,7 +768,17 @@ class TestAll extends CI_Controller
         );
     }
 
-  
+    public function testRequestBy()
+    {
+
+        $this->db->where('requestByEmail', 'fikrizzaki');
+        $this->db->from('jadwal_dosen');
+        $this->db->order_by('requestDateTime', 'DESC');
+        $query = $this->db->get();
+        $ex = $query->result();
+        $testCase = $this->JadwalDosen_model->requestBy('fikrizzaki', null, null);
+        $this->unit->run($testCase, $ex, __FUNCTION__);
+    }
 
     public function kolomKeHari($namaHari)
     {
@@ -822,10 +843,9 @@ class TestAll extends CI_Controller
     }
     function TestCreateAuthURL() {
         $testCase = $this->Auth->createAuthURL() ;
-                $ex = "https://accounts.google.com/o/oauth2/auth?response_type=code&redirect_uri=http%3A%2F%2Flocalhost%2Fauth%2Foauth2callback&client_id=755661919348-psqarioap9frv49rv8jtk38sekm8gqjt.apps.googleusercontent.com&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&access_type=online&approval_prompt=auto";
+        $ex = "https://accounts.google.com/o/oauth2/auth?response_type=code&redirect_uri=http%3A%2F%2Flocalhost%2Fauth%2Foauth2callback&client_id=755661919348-3b2u44e804efh2mghpadttnqh3u4ujd9.apps.googleusercontent.com&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&access_type=online&approval_prompt=auto";
         $this->unit->run($testCase,$ex,__FUNCTION__,"method untuk mengetes createAuthURL") ;
     }
-
 
     function testGetUserInfo() {
 
@@ -841,4 +861,6 @@ class TestAll extends CI_Controller
 
         $this->unit->run($testCase,$ex,__FUNCTION__,"method untuk mengecek logout") ;
     }
+
+
 }
